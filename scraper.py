@@ -13,7 +13,7 @@ import random
 # Setup
 driver_path = '/path/to/chromedriver'
 options = Options()
-options.headless = False #headless mode so popup doesn't pop up
+options.headless = True #headless mode so popup doesn't pop up
 driver = webdriver.Chrome(options=options, executable_path=driver_path)
 os.chdir(os.path.dirname(__file__))
 print("Directory: ", os.getcwd)
@@ -33,12 +33,19 @@ WebDriverWait(driver, 60).until(
 )
 
 # Get elements, output into txt file for validation
-team_names = driver.find_elements(By.XPATH, '//*[@class="style_teamName__24KNG style_teamName__3jTXF ellipsis style_drawTeamName__3xViy"]')
-team_names = [name.text for name in team_names]
+team_names_temp = driver.find_elements(By.XPATH, '//*[@class="style_teamName__24KNG style_teamName__3jTXF ellipsis style_drawTeamName__3xViy"]')
+scores_temp = driver.find_elements(By.XPATH, '//*[@class="style_price__3ZXqH style_drawPrice__1lAp7"]')
+team_names = []
+scores = []
 
-scores = driver.find_elements(By.XPATH, '//*[@class="style_price__3ZXqH style_drawPrice__1lAp7"]')
-scores = [score.text for score in scores]
+# Get rid of draw bets, which have same XPATH. Also save text from elements
+for i in (range(len(team_names_temp))):
+    if team_names_temp[i].text != "Draw":
+        team_names.append(team_names_temp[i].text)
+        scores.append(scores_temp[i].text)
 
+
+# Verify output
 with open("names.txt", "w") as f:
     for i in range(0,len(team_names),2):
         f.write(team_names[i] + ", " + scores[i] + " : " + team_names[i+1] + ", " + scores[i+1] + "\n")
