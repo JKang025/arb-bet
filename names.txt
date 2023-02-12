@@ -1,43 +1,36 @@
-Hanwha Life, 2.430 : Dplus KIA, 1.571
-T1, 1.100 : DRX, 7.390
-LNG, 1.342 : Ninjas in Pyjamas, 3.300
-Royal Never Give Up, 1.671 : Team WE, 2.230
-Bilibili, 1.769 : EDward Gaming, 2.070
+T1, 1.105 : DRX, 7.190
+LNG, 1.364 : Ninjas in Pyjamas, 3.170
+Royal Never Give Up, 1.680 : Team WE, 2.210
+Bilibili, 1.800 : EDward Gaming, 2.030
 Ultra Prime, 1.740 : LGD, 2.120
 Oh My God, 1.581 : Rare Atom, 2.410
 Top Esports, 1.429 : Invictus, 2.870
 ThunderTalk, 3.520 : Weibo, 1.308
 Anyone's Legend, 7.230 : Bilibili, 1.104
-Immortals Chall, 1.740 : Draw, 2.500
-Liquid First, 7.730 : TSM Chall, 2.840
-Draw, 2.030 : Area of Effect, 3.840
-Dignitas Chall, 1.884 : Draw, 2.320
-Cincinnati Fear, 7.060 : Liquid, 4.240
-Draw, 2.090 : Cloud9 Chall, 2.550
-Hanwha Life, 2.430 : Dplus KIA, 1.571
-LNG, 1.342 : Ninjas in Pyjamas, 3.300
-FENNEL, 4.630 : Sengoku, 1.171
-T1, 1.100 : DRX, 7.390
-SEM9 WPE, 6.240 : Frank, 1.103
-Royal Never Give Up, 1.671 : Team WE, 2.230
-Deep Cross, 1.200 : HELL PIGS, 4.220
-PSG Talon, 1.564 : Impunity, 2.320
-AXIZ, 2.430 : Burning Core, 1.520
-Bilibili, 1.769 : EDward Gaming, 2.070
+Hanwha Life, 4.420 : Dplus KIA, 1.189
+LNG, 1.364 : Ninjas in Pyjamas, 3.170
+FENNEL, 4.600 : Sengoku, 1.172
+T1, 1.105 : DRX, 7.190
+SEM9 WPE, 6.600 : Frank, 1.094
+Royal Never Give Up, 1.680 : Team WE, 2.210
+Deep Cross, 1.271 : HELL PIGS, 3.520
+PSG Talon, 1.450 : Impunity, 2.630
+AXIZ, 2.150 : Burning Core, 1.653
+Bilibili, 1.800 : EDward Gaming, 2.030
 J Team, 2.250 : Beyond, 1.602
-Vivo Keyd Stars, 4.070 : KaBuM, 1.212
-Los Grandes, 1.485 : LOUD, 2.520
-MAD Lions, 1.139 : Astralis, 5.940
-FURIA, 3.600 : RED Canids, 1.261
-Fluxo, 1.531 : INTZ, 2.400
-G2, 1.317 : BDS, 3.460
-Liberty, 2.730 : paiN, 1.420
+Vivo Keyd Stars, 3.870 : KaBuM, 1.230
+Los Grandes, 1.438 : LOUD, 2.670
+MAD Lions, 1.131 : Astralis, 6.170
+FURIA, 3.310 : RED Canids, 1.301
+Fluxo, 1.497 : INTZ, 2.490
+G2, 1.270 : BDS, 3.830
+Liberty, 2.790 : paiN, 1.404
 Golden Guardians Chall, 5.850 : Draw, 2.200
 Cloud9 Chall, 2.090 : 100 Thieves Chall, 1.236
 Draw, 4.150 : CLG Faith, 23.090
 Liquid Chall, 2.330 : Draw, 2.110
-CLG Chall, 4.950 : Wildcard, 1.380
-Draw, 3.250 : FLY FAM, 15.170
+CLG Chall, 4.950 : Wildcard, 1.367
+Draw, 3.310 : FLY FAM, 15.670
 FlyQuest Chall, 6.230 : Draw, 2.230
 Dignitas Chall, 2.020 : TSM Chall, 5.040
 Draw, 2.120 : Cincinnati Fear, 2.300
@@ -46,8 +39,9 @@ T1 Chall, 1.058 : BRION Chall, 8.700
 Ultra Prime, 1.740 : LGD, 2.120
 KT Rolster Chall, 1.248 : Gen.G Global Academy, 3.700
 Oh My God, 1.581 : Rare Atom, 2.410
+Vitality, 1.602 : KOI, 2.360
 RED Academy, 1.100 : Liberty Academy, 6.370
-Fluxo Academy, 3.090 : Vivo Keyd Stars Academy, 1.337
+Fluxo Academy, 3.030 : Vivo Keyd Stars Academy, 1.350
 Evil Geniuses Chall, 4.940 : Draw, 2.110
 Wildcard, 2.330 : Area of Effect, 2.400
 Draw, 2.090 : Liquid First, 4.760
@@ -64,48 +58,112 @@ Liiv SANDBOX Youth, 4.500 : Dplus KIA Chall, 1.179
 Top Esports, 1.429 : Invictus, 2.870
 Kwangdong F Chall, 3.410 : DRX Chall, 1.285
 ThunderTalk, 3.520 : Weibo, 1.308
+BRUTE, 4.700 : eSuba, 1.166
+Cryptova, 1.250 : Inside Games, 3.690
+SINNERS Esports, 4.210 : Entropiq, 1.200
 Guasones, 3.330 : Rebels, 1.297
 Domino, 2.020 : Nativz, 1.740
-Heretics Academy, 1.409 : Giants, 2.770
-The Agency, 1.395 : Northern Lions, 2.830
-NORD, 1.746 : Riddle, 2.010
-KOI Academy, 1.512 : UCAM Tokiers, 2.450
+Sampi, 3.690 : Dynamo Eclot, 1.250
+Heretics Academy, 1.418 : Giants, 2.740
+The Agency, 1.357 : Northern Lions, 3.000
+NORD, 1.662 : Riddle, 2.040
+KOI Academy, 1.526 : UCAM Tokiers, 2.410
 Benelux United, 1.666 : mCon, 2.130
 Ruddy, 1.421 : Vanir, 2.720
 Movistar Riders, 1.609 : Fnatic TQ, 2.230
-7AM, 1.261 : HEET, 3.600
+7AM, 1.238 : HEET, 3.800
 UniQ, 3.330 : Verdant, 1.297
 Vivo Keyd Stars Academy, 2.270 : KaBuM Academy, 1.588
-BISONS, 1.613 : Barca, 2.220
-ZennIT, 5.150 : KRC Genk, 1.143
+BISONS, 1.632 : Barca, 2.190
+ZennIT, 5.300 : KRC Genk, 1.136
 Los Grandes Academy, 1.500 : LOUD Academy, 2.480
 Estral, 1.034 : All Knights, 11.620
 FURIA Academy, 3.360 : RED Academy, 1.294
-Fluxo Academy, 2.270 : INTZ Academy, 1.588
-The Kings, 2.650 : Aze, 1.444
+Fluxo Academy, 2.260 : INTZ Academy, 1.595
+The Kings, 2.460 : Aze, 1.507
 Liberty Academy, 3.300 : paiN Academy, 1.303
 Anyone's Legend, 7.230 : Bilibili, 1.104
 JD Gaming, 1.219 : EDward Gaming, 4.390
 UniQ, 5.570 : Ruddy, 1.123
+3BL, 4.210 : Geekay, 1.200
 NORD, 1.100 : Nativz, 6.220
+Fox, 1.200 : RA'AD, 4.220
 Domino, 3.450 : Verdant, 1.280
+Nigma Galaxy, 1.400 : Anubis, 2.810
 Vanir, 3.150 : Riddle, 1.326
+GnG, 1.800 : Triple, 1.943
 Six Karma, 2.300 : Movistar R7, 1.574
-Isurus, 2.820 : Infinity, 1.396
+Evil Geniuses, 2.140 : 100 Thieves, 1.724
+Immortals, 4.720 : FlyQuest, 1.196
+Isurus, 3.580 : Infinity, 1.263
+Counter Logic Gaming, 3.000 : Liquid, 1.400
+Dignitas, 3.870 : Cloud9, 1.266
+TSM, 1.649 : Golden Guardians, 2.270
 Liiv SANDBOX Youth, 3.600 : KT Rolster Chall, 1.261
 Kwangdong F Chall, 6.920 : Dplus KIA Chall, 1.087
-Gen.G Global Academy, 1.173 : BRION Chall, 4.590
+Gen.G Global Academy, 1.175 : BRION Chall, 4.560
+Royal Never Give Up, 1.389 : FunPlus Phoenix, 3.050
+WE, 2.810 : LNG, 1.444
 BDS Academy, 1.666 : BK ROG, 2.130
-Rebels, 2.390 : Heretics Academy, 1.534
+Unicorns of Love SE, 1.285 : NNO Prime, 3.410
+Rebels, 2.340 : Heretics Academy, 1.555
+3BL, 1.800 : RA'AD, 1.943
+Cyber Wolves, 2.480 : Partizan, 1.500
 Izi Dream, 4.210 : GO, 1.201
+MOUZ, 2.260 : Eintracht Spandau, 1.595
+ZennIT, 2.310 : Benelux United, 1.571
+Fox, 1.200 : Anubis, 4.220
+Ankora, 3.510 : Valiance, 1.271
 LDLC OL, 1.699 : GameWard, 2.080
+GamerLegion, 1.578 : BIG, 2.300
 Giants, 2.020 : Fnatic TQ, 1.740
+KRC Genk, 1.460 : The Agency, 2.600
+Nigma Galaxy, 1.400 : GnG, 2.810
+Odivelas, 1.299 : Varona, 3.320
+XtremeDominators, 6.360 : MAGAZA, 1.100
 Aegis, 2.220 : Solary, 1.613
+Schalke 04, 1.666 : Eintracht Frankfurt, 2.130
 KOI Academy, 2.130 : Barca, 1.666
+HEET, 2.040 : Northern Lions, 1.724
+Geekay, 1.200 : Triple, 4.220
+For The Win, 1.666 : EGN, 2.130
+Diamant, 2.040 : Crvena zvezda, 1.724
 Vitality.Bee, 1.500 : Karmine Corp, 2.480
+SK Gaming Prime, 1.250 : E WIE EINFACH, 3.690
 BISONS, 1.800 : Movistar Riders, 1.943
-Nongshim RF Chall, 2.270 : DRX Chall, 1.540
-T1 Chall, 1.833 : Hanwha Life Chall, 1.833
+mCon, 3.690 : 7AM, 1.250
+GTZ, 1.100 : Boavista FC, 6.370
+Liquid, 2.220 : Evil Geniuses, 1.675
+White Dragons, 1.613 : Byteway, 2.220
+Immortals, 3.980 : Cloud9, 1.255
+Counter Logic Gaming, 3.520 : 100 Thieves, 1.308
+TSM, 3.700 : FlyQuest, 1.286
+Dignitas, 2.430 : Golden Guardians, 1.571
+Nongshim RF Chall, 2.310 : DRX Chall, 1.568
+T1 Chall, 1.869 : Hanwha Life Chall, 1.869
+Cryptova, 2.430 : SINNERS Esports, 1.471
+BRUTE, 2.090 : Dynamo Eclot, 1.632
+Entropiq, 1.763 : eSuba, 1.909
+BIG, 2.150 : NNO Prime, 1.598
+Valiance, 2.820 : Crvena zvezda, 1.355
+Sampi, 1.689 : Inside Games, 2.000
+Eintracht Spandau, 1.228 : Eintracht Frankfurt, 3.590
+MAGAZA, 2.910 : Cyber Wolves, 1.337
+Unicorns of Love SE, 1.689 : SK Gaming Prime, 2.000
+White Dragons, 1.471 : EGN, 2.430
+XtremeDominators, 9.290 : Diamant, 1.017
+MOUZ, 1.233 : E WIE EINFACH, 3.540
+GTZ, 1.373 : Byteway, 2.760
+Ankora, 4.610 : Partizan, 1.144
+Schalke 04, 1.540 : GamerLegion, 2.260
+Boavista FC, 3.260 : Odivelas, 1.276
+Counter Logic Gaming, 4.160 : FlyQuest, 1.204
+For The Win, 1.176 : Varona, 4.150
+Immortals, 3.620 : Evil Geniuses, 1.259
+Liquid, 2.380 : Cloud9, 1.540
+TSM, 1.546 : Dignitas, 2.370
+Golden Guardians, 3.710 : 100 Thieves, 1.247
+Heretics, 2.210 : SK Gaming, 1.617
 Dire Wolves, 1.462 : PEACE, 2.450
 Bliss, 1.076 : Kanga, 6.390
 Pentanet.GG, 1.032 : MAMMOTH, 9.710

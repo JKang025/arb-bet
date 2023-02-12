@@ -15,35 +15,87 @@ driver_path = '/path/to/chromedriver'
 options = Options()
 options.headless = False #headless mode so popup doesn't pop up
 driver = webdriver.Chrome(options=options, executable_path=driver_path)
+os.chdir(os.path.dirname(__file__))
+print("Directory: ", os.getcwd)
 
 # Get random proxy
-with open('dali/http_proxies.txt', 'r') as file:
+with open('http_proxies.txt', 'r') as file:
         proxies = file.readlines()
         rand_proxy = random.choice(proxies)
         print("Random proxy: ", rand_proxy)
 
 options.add_argument(f'--proxy-server=(proxy)')
 driver.get('https://www.pinnacle.com/en/esports-hub/league-of-legends/')
+
+# Wait until website loads properly
 WebDriverWait(driver, 60).until(
     EC.presence_of_element_located((By.XPATH, '//*[@class="style_price__3ZXqH style_drawPrice__1lAp7"]'))
 )
 
-
+# Get elements, output into txt file for validation
 team_names = driver.find_elements(By.XPATH, '//*[@class="style_teamName__24KNG style_teamName__3jTXF ellipsis style_drawTeamName__3xViy"]')
+team_names = [name.text for name in team_names]
+
 scores = driver.find_elements(By.XPATH, '//*[@class="style_price__3ZXqH style_drawPrice__1lAp7"]')
-# print(elements.text)
+scores = [score.text for score in scores]
 
-print(len(team_names))
-print(len(scores))
+with open("names.txt", "w") as f:
+    for i in range(0,len(team_names),2):
+        f.write(team_names[i] + ", " + scores[i] + " : " + team_names[i+1] + ", " + scores[i+1] + "\n")
 
-
-# for e in scores:
-#     print(e.text)
 
 # Write output (just for confirmation)
 with open("output.txt", "w") as f:
     f.write(driver.page_source)
 
+
+
+# GRAPH STUFF
+graph = {}
+
+# The node contains team name and website information; the edge contains scores between teams
+class Node:
+    def __init__(self, website, scores):
+        self.website = website
+        self.scores = scores
+
+class Edge:
+    def __init__(self, node_1, node_2, node_1_score, ):
+        self.node_1 = node_1
+        self.node_2 = node_2
+        self.node_1_score = node_1_score
+        self.node_2_score = node_2_score
+
+
+
+website = "Pinnacle"
+for i in range(0, len(team_names), 2):
+
+    team_1 = team_names[i]
+    team_2 = team_names[i+1]
+
+    if team_1 not in graph: #initialize if not in graph
+        new_node = Node(website, {})
+        graph[team_1] = new_node
+
+    if team_2 not in graph: #same for i+1
+        new_node = Node(website, {})
+        graph[team_2] = new_node
+
+
+    graph[team_1].scores[team_2] = scores[i] #input odds of team 1 winning against team 2
+    graph[team_2].scores[team_1] = scores[i+1]
+
+
+
+
+for element in graph:
+    print(element, " : ", graph[element].website, " : [", end="")
+
+    for neighbor in graph[element].scores:
+        print(neighbor, " - ", graph[element].scores[neighbor], "       ", end="")
+
+    print("]")
 
 
 driver.close()
