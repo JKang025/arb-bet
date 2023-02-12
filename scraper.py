@@ -13,7 +13,7 @@ import random
 # Setup
 driver_path = '/path/to/chromedriver'
 options = Options()
-options.headless = True #headless mode so popup doesn't pop up
+options.headless = False #headless mode so popup doesn't pop up
 driver = webdriver.Chrome(options=options, executable_path=driver_path)
 os.chdir(os.path.dirname(__file__))
 print("Directory: ", os.getcwd)
@@ -23,8 +23,8 @@ with open('http_proxies.txt', 'r') as file:
         proxies = file.readlines()
         rand_proxy = random.choice(proxies)
         print("Random proxy: ", rand_proxy)
-
 options.add_argument(f'--proxy-server=(proxy)')
+
 driver.get('https://www.pinnacle.com/en/esports-hub/league-of-legends/')
 
 # Wait until website loads properly
@@ -44,7 +44,6 @@ for i in (range(len(team_names_temp))):
         team_names.append(team_names_temp[i].text)
         scores.append(scores_temp[i].text)
 
-
 # Verify output
 with open("names.txt", "w") as f:
     for i in range(0,len(team_names),2):
@@ -56,53 +55,107 @@ with open("output.txt", "w") as f:
     f.write(driver.page_source)
 
 
-
+# -----------------------------------
 # GRAPH STUFF
 graph = {}
 
-# The node contains team name and website information; the edge contains scores between teams
+# Team name and website information
 class Node:
     def __init__(self, website, scores):
         self.website = website
         self.scores = scores
 
-class Edge:
-    def __init__(self, node_1, node_2, node_1_score, ):
-        self.node_1 = node_1
-        self.node_2 = node_2
-        self.node_1_score = node_1_score
-        self.node_2_score = node_2_score
+# Inserts nodes into graph
+def initialize_graph(website, team_names, scores):
+# website = "Pinnacle"
+    for i in range(0, len(team_names), 2):
 
+        team_1 = team_names[i]
+        team_2 = team_names[i+1]
 
+        initialize_node(website, team_1)
+        initialize_node(website, team_2)
 
-website = "Pinnacle"
-for i in range(0, len(team_names), 2):
+        graph[team_1].scores[team_2] = scores[i] #input odds of team 1 winning against team 2
+        graph[team_2].scores[team_1] = scores[i+1]
 
-    team_1 = team_names[i]
-    team_2 = team_names[i+1]
-
-    if team_1 not in graph: #initialize if not in graph
+def initialize_node(website, team):
+    if team not in graph:
         new_node = Node(website, {})
-        graph[team_1] = new_node
-
-    if team_2 not in graph: #same for i+1
-        new_node = Node(website, {})
-        graph[team_2] = new_node
+        graph[team] = new_node
+        return True
+    return False
 
 
-    graph[team_1].scores[team_2] = scores[i] #input odds of team 1 winning against team 2
-    graph[team_2].scores[team_1] = scores[i+1]
+# Prints graph
+def output_graph():
+    for element in graph:
+        print(element, " : ", graph[element].website, " : [", end="")
+
+        for neighbor in graph[element].scores:
+            print(neighbor, " - ", graph[element].scores[neighbor], end="")
+
+        print("]")
+
+initialize_graph("Pinnacle", team_names, scores)
+output_graph()
 
 
 
 
-for element in graph:
-    print(element, " : ", graph[element].website, " : [", end="")
 
-    for neighbor in graph[element].scores:
-        print(neighbor, " - ", graph[element].scores[neighbor], "       ", end="")
 
-    print("]")
+
+# From Luckbox
+driver.get("https://luckbox.com/?games=league-of-legends")
+
+# Wait until website loads properly
+WebDriverWait(driver, 60).until(
+    EC.presence_of_element_located((By.XPATH, '//*[@class="team-name"]'))
+)
+
+luckbox_names_temp = driver.find_elements(By.XPATH, '//*[@class="team-name"]' or '//*[@class="draw"]') #draw odds are included here so we can identify/remove them in list of scores
+luckbox_scores_temp = driver.find_elements(By.XPATH, '//*[@class="odds"]') #includes draw odds
+luckbox_names = []
+luckbox_scores = []
+
+
+# Get rid of draw odds. Also save text from elements
+for i in (range(len(luckbox_names_temp))):
+    if luckbox_names_temp[i].text != "Draw":
+        luckbox_names.append(team_names_temp[i].text)
+        luckbox_scores.append(scores_temp[i].text)
+
+for i in luckbox_names:
+    print(i)
+
+
+# Parse teamnames and change graph accordingly
+for i in range(0,len(luckbox_names),2):
+    team_1 = luckbox_names[i]
+    team_2 = luckbox_names[i+1]
+
+    # if either team is not in graph yet, initialize
+    if initialize_node(team_1) or initialize_node(team_2):
+        initialize_node(team_2)
+
+        graph[team_1].scores[team_2] = scores[i] #input odds of team 1 winning against team 2
+        graph[team_2].scores[team_1] = scores[i+1]
+
+    # else if both teams are already in the graph. 
+    else:
+        score_1 = graph[team_1].scores[team_2]
+        score_2 = graph[team_2].scores[team_1]
+
+        if luckbox_scores[i] > score_1: #if prev odds > current odds, replace it
+            score_1 = luckbox_scores[i]
+
+        if luckbox_scores[i+1] > score_2: #if prev odds > current odds, replace it
+            score_2 = luckbox_scores[i+1]
+
+        # Arb opportunity!
+        if 1/score_1 + 1/score_2 < 1:
+            print("WORKS")
 
 
 driver.close()
