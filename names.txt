@@ -8,33 +8,33 @@ Kwangdong Freecs, 1.892 : BRION, 1.925
 Nongshim RedForce, 4.780 : KT Rolster, 1.193
 T1, 1.371 : Gen.G, 3.140
 Liiv SANDBOX, 3.070 : Dplus KIA, 1.342
-Liiv SANDBOX Youth, 4.840 : Dplus KIA Chall, 1.158
-Top Esports, 1.444 : Invictus, 2.820
-Kwangdong F Chall, 3.930 : DRX Chall, 1.225
-ThunderTalk, 3.790 : Weibo, 1.275
+Liiv SANDBOX Youth, 4.890 : Dplus KIA Chall, 1.156
+Top Esports, 1.460 : Invictus, 2.750
+Kwangdong F Chall, 3.810 : DRX Chall, 1.236
+ThunderTalk, 3.800 : Weibo, 1.273
 BRUTE, 4.800 : eSuba, 1.161
-Cryptova, 1.352 : Inside Games, 3.020
-Forsaken, 1.980 : Illuminar, 1.769
+Cryptova, 1.377 : Inside Games, 2.900
+Forsaken, 1.793 : Illuminar, 1.952
 Lille, 1.666 : Atletec, 2.040
 Kaufland Hangry Knights, 2.340 : Sprout, 1.558
 SINNERS Esports, 4.040 : Entropiq, 1.215
 Guasones, 3.620 : Rebels, 1.258
 Grypciocraft, 1.153 : Exeed, 4.930
-Domino, 2.160 : Nativz, 1.649
+Domino, 2.090 : Nativz, 1.689
 Akroma, 2.920 : Klanik, 1.333
 DKB Diamonds, 2.070 : ERN ROAR, 1.649
 Sampi, 3.690 : Dynamo Eclot, 1.250
 Heretics Academy, 1.404 : Giants, 2.790
 Iron Wolves, 1.312 : Komil and Friends, 3.240
 The Agency, 1.357 : Northern Lions, 3.000
-NORD, 1.746 : Riddle, 2.010
+NORD, 1.694 : Riddle, 2.090
 Project Conquerors, 3.850 : Du Sud, 1.200
 WeSports, 1.500 : mYinsanity, 2.480
-KOI Academy, 1.526 : UCAM Tokiers, 2.410
+KOI Academy, 1.515 : UCAM Tokiers, 2.440
 ESCA, 2.810 : Alior Bank, 1.400
 Benelux United, 1.666 : mCon, 2.130
 Ruddy, 1.403 : Vanir, 2.800
-Joblife, 1.317 : beGenius, 3.000
+Joblife, 1.500 : beGenius, 2.360
 Austrian Force willhaben, 1.041 : TeamOrangeGaming, 7.630
 Movistar Riders, 1.552 : Fnatic TQ, 2.350
 7AM, 1.238 : HEET, 3.800
@@ -49,7 +49,7 @@ FURIA Academy, 4.030 : RED Academy, 1.215
 Estral, 1.032 : All Knights, 12.050
 Fluxo Academy, 2.590 : INTZ Academy, 1.462
 The Kings, 2.800 : Aze, 1.401
-Liberty Academy, 2.730 : paiN Academy, 1.421
+Liberty Academy, 2.700 : paiN Academy, 1.429
 Oh My Dream, 3.650 : Edward Gaming Youth, 1.254
 KT Rolster, 1.284 : DRX, 3.700
 Rare Atom Period, 2.460 : Invictus Young, 1.505
@@ -65,7 +65,7 @@ ZETA, 2.650 : Ramboot, 1.400
 NORD, 1.099 : Nativz, 6.390
 KIT SC SmartWe, 2.480 : Austrian Force willhaben, 1.500
 Fox, 1.320 : RA'AD, 3.190
-Levante UD, 2.840 : Wizards, 1.352
+Levante UD, 2.560 : Wizards, 1.427
 Domino, 3.370 : Verdant, 1.291
 Sprout, 1.869 : mYinsanity, 1.869
 Nigma Galaxy, 1.301 : Anubis, 3.310
@@ -127,13 +127,13 @@ Dignitas, 2.510 : Golden Guardians, 1.540
 Nongshim RF Chall, 2.150 : DRX Chall, 1.653
 T1 Chall, 1.813 : Hanwha Life Chall, 1.934
 SANDBOX, 4.190 : T1, 1.235
-FENNEL, 1.400 : Crest Act, 2.650
+FENNEL, 1.239 : Crest Act, 3.490
 LGD, 4.320 : Ninjas in Pyjamas, 1.225
 Frank, 1.561 : Deep Cross, 2.330
 Hanwha Life, 1.431 : DRX, 2.870
-SEM9 WPE, 7.070 : Beyond, 1.083
+SEM9 WPE, 7.200 : Beyond, 1.081
 ThunderTalk, 1.952 : Oh My God, 1.869
-J Team, 2.020 : Impunity, 1.746
+J Team, 2.030 : Impunity, 1.735
 PSG Talon, 2.240 : CTBC Flying Oyster, 1.602
 Cryptova, 2.480 : SINNERS Esports, 1.500
 BRUTE, 2.760 : Dynamo Eclot, 1.413
@@ -149,12 +149,12 @@ AYM, 2.920 : ZETA, 1.333
 Unicorns of Love SE, 1.724 : SK Gaming Prime, 2.040
 White Dragons, 1.500 : EGN, 2.480
 XtremeDominators, 9.470 : Diamant, 1.037
-Wizards, 2.300 : Case, 1.523
+Wizards, 2.380 : Case, 1.492
 MOUZ, 1.257 : E WIE EINFACH, 3.640
-GTZ, 1.284 : Byteway, 3.420
+GTZ, 1.299 : Byteway, 3.320
 Ankora, 7.390 : Partizan, 1.077
 Ramboot, 1.250 : ZEST, 3.410
-Schalke 04, 2.160 : GamerLegion, 1.649
+Schalke 04, 2.100 : GamerLegion, 1.684
 Boavista FC, 3.320 : Odivelas, 1.300
 Counter Logic Gaming, 4.400 : FlyQuest, 1.218
 For The Win, 1.133 : Varona, 5.380
@@ -180,10 +180,10 @@ INTZ, 1.806 : Vivo Keyd Stars, 1.943
 Liberty, 2.760 : LOUD, 1.411
 Astralis, 2.740 : BDS, 1.465
 T1, 1.371 : Gen.G, 3.140
-LNG, 1.207 : FunPlus Phoenix, 4.120
-Sengoku, 1.133 : Crest Act, 4.780
+LNG, 1.233 : FunPlus Phoenix, 4.230
+Sengoku, 1.077 : Crest Act, 6.360
 Liiv SANDBOX, 3.070 : Dplus KIA, 1.342
-PSG Talon, 1.469 : J Team, 2.440
+PSG Talon, 1.462 : J Team, 2.450
 Anyone's Legend, 3.800 : Team WE, 1.237
 Beyond, 1.282 : HELL PIGS, 3.190
 EDward Gaming, 2.620 : Top Esports, 1.452
