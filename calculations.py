@@ -49,7 +49,7 @@ class Graph:
 
     def update_graph(self, website, team_names, scores):
 
-        print(len(team_names))
+        arb_opportunities = "" #final string of working arb opportunities. If there are none, return empty string
 
         for i in range(0, len(team_names), 2):
             team_1 = team_names[i]
@@ -81,10 +81,17 @@ class Graph:
                     old_score_2 = scores[i+1]
 
                 # Arb opportunity!
-                if 1/old_score_1 + 1/old_score_2 < 1:
+                arb = 1/old_score_1 + 1/old_score_2
+                if arb < 1:
                     print("WORKS")
+                    arb_opportunities.append(self.graph[team_1].team, ", ", str(old_score_1), " : ", self.graph[team_2], ", ", str(old_score_2), " : ", arb)
+                
+                # print(self.graph[team_1].team, ", " , old_score_1, " : ", self.graph[team_2].team, ", ", old_score_2,", ",arb)
 
-                print("Arb value: ", 1/old_score_1 + 1/old_score_2)
+        return arb_opportunities
+
+
+
 
 
 
