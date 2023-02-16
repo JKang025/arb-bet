@@ -18,6 +18,7 @@ class Graph:
             self.graph[team] = new_node
             return True
         return False
+
     def initialize_graph(self, website, team_names, scores):
     # website = "Pinnacle"
         for i in range(0, len(team_names), 2):
@@ -43,4 +44,38 @@ class Graph:
                 print(neighbor, " - ", self.graph[element].scores[neighbor], end="")
 
             print("]")
+
+
+
+    def update_graph(self, website, team_names, scores):
+        for i in range(0, len(team_names), 2):
+            team_1 = team_names[i]
+            team_2 = team_names[i+1]
+
+             # if either team is not in graph yet, initialize
+            if self.initialize_node(website, team_1) or self.initialize_node(website, team_2):
+                self.initialize_node(team_2)
+
+                self.graph[team_1].scores[team_2] = scores[i] #input odds of team 1 winning against team 2
+                self.graph[team_2].scores[team_1] = scores[i+1]
+
+            # else: both teams are already in graph
+            else:
+                old_score_1 = self.graph[team_1].scores[team_2]
+                old_score_2 = self.graph[team_2].scores[team_1]
+                
+                if scores[i] > old_score_1: #if current odds (scores[i]) < past odds (score_1), replace it
+                    old_score_1 = scores[i]
+
+                if scores[i+1] > old_score_2: #if prev odds > current odds, replace it
+                    old_score_2 = scores[i+1]
+
+                # Arb opportunity!
+                if 1/old_score_1 + 1/old_score_2 < 1:
+                    print("WORKS")
+
+                print("Arb value: ", 1/old_score_1 + 1/old_score_2 < 1)
+
+
+
 

@@ -27,6 +27,19 @@ def setUp():
     options.add_argument(f'--proxy-server=(proxy)')
     return driver
 
+# Verify team names, scores, and matchups
+def verify_matchups(file, team_names, scores):
+    with open(file, "w") as f:
+        for i in range(0,len(team_names),2):
+            f.write(team_names[i] + ", " + scores[i] + " : " + team_names[i+1] + ", " + scores[i+1] + "\n")
+
+# Verify HTML that was parsed
+def verify_HTML(file, HTML):
+    with open(file, "w") as f:
+        f.write(HTML)
+
+
+
 def pinnacle():
     driver = setUp()
 
@@ -50,14 +63,11 @@ def pinnacle():
             scores.append(scores_temp[i].text)
 
     # Verify output
-    with open("names.txt", "w") as f:
-        for i in range(0,len(team_names),2):
-            f.write(team_names[i] + ", " + scores[i] + " : " + team_names[i+1] + ", " + scores[i+1] + "\n")
-
+    verify_matchups("pinnacle_matchups", team_names, scores)
 
     # Write output (just for confirmation)
-    with open("output.txt", "w") as f:
-        f.write(driver.page_source)
+    verify_HTML("pinnacle_HTML", driver.page_source)
+
     return [team_names, scores]
 
 
@@ -69,7 +79,22 @@ def luckbox():
     driver = setUp()
     driver.get("https://luckbox.com/?games=league-of-legends")
 
-    # Wait until website loads properly
+    # Configure cookies
+    WebDriverWait(driver, 60).until(
+        EC.presence_of_element_located((By.XPATH, '//button[@data-cookiefirst-action="adjust"]'))
+    )
+
+    cookie_button = driver.find_element(By.XPATH, '//button[@data-cookiefirst-action="adjust"]')
+    cookie_button.click()
+
+    WebDriverWait(driver, 60).until(
+        EC.presence_of_element_located((By.XPATH, '//button[@data-cookiefirst-action="save"]'))
+    )
+
+    save_button = driver.find_element(By.XPATH, '//button[@data-cookiefirst-action="save"]')
+    save_button.click()
+
+    # Get matchups
     WebDriverWait(driver, 60).until(
         EC.presence_of_element_located((By.XPATH, '//*[@class="team-name"]'))
     )
@@ -79,14 +104,30 @@ def luckbox():
     luckbox_names = []
     luckbox_scores = []
 
+    import time
+    time.sleep(5)
+
+    print("TEST " , luckbox_names_temp[0].text)
+
 
     # Get rid of draw odds. Also save text from elements
     for i in (range(len(luckbox_names_temp))):
         if luckbox_names_temp[i].text != "Draw":
+            print("Not draw! ", luckbox_names_temp[i].text)
             luckbox_names.append(luckbox_names_temp[i].text)
             luckbox_scores.append( luckbox_scores_temp[i].text)
 
+        else:
+            print("DRAW")
+
     for i in luckbox_names:
-        print(i)
+        print("Team name " , i)
+
+
+    verify_matchups("luckbox_matchups", luckbox_names, luckbox_scores)
+
+    # verify HTML output
+    verify_HTML("luckbox_HTML", driver.page_source)
+
     
     return [luckbox_names, luckbox_scores]
