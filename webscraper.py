@@ -31,7 +31,7 @@ def setUp():
 def verify_matchups(file, team_names, scores):
     with open(file, "w") as f:
         for i in range(0,len(team_names),2):
-            f.write(team_names[i] + ", " + scores[i] + " : " + team_names[i+1] + ", " + scores[i+1] + "\n")
+            f.write(team_names[i] + ", " + str(scores[i]) + " : " + team_names[i+1] + ", " + str(scores[i+1]) + "\n")
 
 # Verify HTML that was parsed
 def verify_HTML(file, HTML):
@@ -60,7 +60,7 @@ def pinnacle():
     for i in (range(len(team_names_temp))):
         if team_names_temp[i].text != "Draw":
             team_names.append(team_names_temp[i].text)
-            scores.append(scores_temp[i].text)
+            scores.append(float(scores_temp[i].text))
 
     # Verify output
     verify_matchups("pinnacle_matchups", team_names, scores)
@@ -115,14 +115,10 @@ def luckbox():
         if luckbox_names_temp[i].text != "Draw":
             print("Not draw! ", luckbox_names_temp[i].text)
             luckbox_names.append(luckbox_names_temp[i].text)
-            luckbox_scores.append( luckbox_scores_temp[i].text)
+            luckbox_scores.append(float(luckbox_scores_temp[i].text))
 
         else:
             print("DRAW")
-
-    for i in luckbox_names:
-        print("Team name " , i)
-
 
     verify_matchups("luckbox_matchups", luckbox_names, luckbox_scores)
 
