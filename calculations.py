@@ -55,22 +55,20 @@ class Graph:
             team_1 = team_names[i]
             team_2 = team_names[i+1]
 
-            scores[i] = scores[i] #cast as int
-            scores[1+1] = scores[i+1]
-
              # if either team is not in graph yet, initialize
             if self.initialize_node(website, team_1) or self.initialize_node(website, team_2):
                 self.initialize_node(website, team_2)
+                print("Inputting either: ",team_1, ", ", team_2)
 
+            # if both teams are in graphs but don't have matchup against each other
+            # note that we only have to check one edge, since either both edges exist or neither
+            if team_2 not in self.graph[team_1].scores:
                 self.graph[team_1].scores[team_2] = scores[i] #input odds of team 1 winning against team 2
                 self.graph[team_2].scores[team_1] = scores[i+1]
-
-                print("New team: ", team_1, " : ", team_2)
+                print("Inputting scores for: ",team_1, ", ", team_2)
 
             # else: both teams are already in graph
             else:
-
-                # scores are strings, so cast as int
                 old_score_1 = self.graph[team_1].scores[team_2]
                 old_score_2 = self.graph[team_2].scores[team_1]
                 
@@ -86,7 +84,7 @@ class Graph:
                     print("WORKS")
                     arb_opportunities.append(self.graph[team_1].team, ", ", str(old_score_1), " : ", self.graph[team_2], ", ", str(old_score_2), " : ", arb)
                 
-                # print(self.graph[team_1].team, ", " , old_score_1, " : ", self.graph[team_2].team, ", ", old_score_2,", ",arb)
+                print(team_1, ", " , old_score_1, " : ", team_2, ", ", old_score_2,", ",arb)
 
         return arb_opportunities
 

@@ -39,10 +39,10 @@ def verify_HTML(file, HTML):
         f.write(HTML)
 
 
-
+################################################
+# From Pinnacle
 def pinnacle():
     driver = setUp()
-
     driver.get('https://www.pinnacle.com/en/esports-hub/league-of-legends/')
 
     # Wait until website loads properly
@@ -107,18 +107,11 @@ def luckbox():
     import time
     time.sleep(5)
 
-    print("TEST " , luckbox_names_temp[0].text)
-
-
     # Get rid of draw odds. Also save text from elements
     for i in (range(len(luckbox_names_temp))):
         if luckbox_names_temp[i].text != "Draw":
-            print("Not draw! ", luckbox_names_temp[i].text)
             luckbox_names.append(luckbox_names_temp[i].text)
             luckbox_scores.append(float(luckbox_scores_temp[i].text))
-
-        else:
-            print("DRAW")
 
     verify_matchups("luckbox_matchups", luckbox_names, luckbox_scores)
 
@@ -127,3 +120,35 @@ def luckbox():
 
     
     return [luckbox_names, luckbox_scores]
+
+################################################
+# From Vulkan
+def vulkan():
+    driver = setUp()
+    driver.get('https://vulkan.bet/en/esports/league-of-legends')
+
+    # Wait until appropriate elements are loaded
+    WebDriverWait(driver, 60).until(
+        EC.presence_of_element_located((By.XPATH, '//button[@class="__app-Odd-button odd__button___2eiZg"]'))
+    )
+
+    vulkan_temp = driver.find_elements(By.XPATH, '//*[@class="__app-Odd-button odd__button___2eiZg"]')
+    vulkan_names = []
+    vulkan_scores = []
+
+    # Get rid of draw odds. Also save text from elements
+    for i in (range(len(vulkan_temp))):
+        vulkan_title = vulkan_temp[i].get_attribute("title")
+
+        # not including over/under odds
+        if not vulkan_title.startswith("over") and not vulkan_title.startswith("under") and not "(" in vulkan_title:
+            semicolon_index = vulkan_title.find(":")
+            vulkan_names.append(vulkan_title[:semicolon_index])
+            vulkan_scores.append(float(vulkan_temp[i].text))
+
+    verify_matchups("vulkan_matchups", vulkan_names, vulkan_scores)
+
+    # verify HTML output
+    verify_HTML("vulkan_HTML", driver.page_source)
+
+    return [vulkan_names, vulkan_scores]
