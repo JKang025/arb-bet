@@ -59,8 +59,9 @@ def pinnacle():
     # Get rid of draw bets, which have same XPATH. Also save text from elements
     for i in (range(len(team_names_temp))):
         if team_names_temp[i].text != "Draw":
-            team_names.append(team_names_temp[i].text)
-            scores.append(float(scores_temp[i].text))
+            if(scores[i].text != ''):
+                team_names.append(team_names_temp[i].text)
+                scores.append(float(scores_temp[i].text))
 
     # Verify output
     verify_matchups("pinnacle_matchups", team_names, scores)
@@ -110,8 +111,10 @@ def luckbox():
     # Get rid of draw odds. Also save text from elements
     for i in (range(len(luckbox_names_temp))):
         if luckbox_names_temp[i].text != "Draw":
-            luckbox_names.append(luckbox_names_temp[i].text)
-            luckbox_scores.append(float(luckbox_scores_temp[i].text))
+            print("Not draw! ", luckbox_names_temp[i].text)
+            if(luckbox_scores_temp[i].text != ''):
+                luckbox_names.append(luckbox_names_temp[i].text)
+                luckbox_scores.append(float(luckbox_scores_temp[i].text))
 
     verify_matchups("luckbox_matchups", luckbox_names, luckbox_scores)
 
