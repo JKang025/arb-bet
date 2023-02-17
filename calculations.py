@@ -84,8 +84,8 @@ class Graph:
                 arb = 1/old_score_1 + 1/old_score_2
                 if arb < 1:
                     print("WORKS")
-                    arb_opportunities.append(self.graph[team_1].team, ", ", str(old_score_1), " : ", self.graph[team_2], ", ", str(old_score_2), " : ", arb)
-                
+                    arb_opportunities = team_1 + ", " + str(old_score_1) + " : " + team_2 + ", ", str(old_score_2), " : " + str(arb) + '\n'
+                    print(arb_opportunities)
                 # print(self.graph[team_1].team, ", " , old_score_1, " : ", self.graph[team_2].team, ", ", old_score_2,", ",arb)
 
         return arb_opportunities

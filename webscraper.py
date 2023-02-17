@@ -59,7 +59,7 @@ def pinnacle():
     # Get rid of draw bets, which have same XPATH. Also save text from elements
     for i in (range(len(team_names_temp))):
         if team_names_temp[i].text != "Draw":
-            if(scores[i].text != ''):
+            if(scores_temp[i].text != ''):
                 team_names.append(team_names_temp[i].text)
                 scores.append(float(scores_temp[i].text))
 
@@ -68,6 +68,10 @@ def pinnacle():
 
     # Write output (just for confirmation)
     verify_HTML("pinnacle_HTML", driver.page_source)
+    #####
+    print(team_names)
+    print(scores)
+    ####
 
     return [team_names, scores]
 
@@ -126,6 +130,8 @@ def luckbox():
 
     # verify HTML output
     verify_HTML("luckbox_HTML", driver.page_source)
-
-    
+    ###
+    print(luckbox_names)
+    print(luckbox_scores)
+    ###
     return [luckbox_names, luckbox_scores]
