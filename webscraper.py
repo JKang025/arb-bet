@@ -214,15 +214,56 @@ def vulkan():
 
 ################################################
 # GGBet
+def get_more_links(number):
+    link = "https://ggbet.com/en/?page=" + str(number) + "&sportIds[]=esports_league_of_legends"
+
+
+
 def ggbet():
     driver = setUp()
-    driver.get('https://www.bovada.lv/sports/esports/league-of-legends')
+    link_init = "https://ggbet.com/en/live?sportIds%5B%5D=esports_league_of_legends"
 
-    # Wait until appropriate elements are loaded
+    driver.get('https://ggbet.com/en/live?sportIds%5B%5D=esports_league_of_legends')
+
+    # Element contains two nested elements. Check the first to see if it's "winner", i.e. the bet we're looking for
     WebDriverWait(driver, 60).until(
-        EC.presence_of_element_located((By.XPATH, '//button[@class="__app-Odd-button odd__button___2eiZg"]'))
+        EC.presence_of_element_located((By.XPATH, '//*[@class="market__container___3VAIG"]'))
     )
 
-    vulkan_temp = driver.find_elements(By.XPATH, '//*[@class="__app-Odd-button odd__button___2eiZg"]')
-    vulkan_names = []
-    vulkan_scores = []
+    ggbet_names = []
+    ggbet_scores = []
+
+    ggbet_temp = driver.find_elements(By.XPATH, '//*[@class="market__container___3VAIG"]')
+    for element in ggbet_temp:
+        header = element.find_element(By.XPATH, './/*[@class="__app-Market-name market__name___2HszL"]') # find element within parent
+
+        if header.text == "Winner": # if header is the correct one for odds (there are three headers)
+            print("Winner")
+
+            try: # some scores are hidden; if that's the case, don't append
+                names = element.find_elements(By.XPATH, './/*[@class="oddButton__title___eYYGG"]')
+                print("Name acquired")
+                scores = element.find_elements(By.XPATH, './/*[@class="oddButton__coef___2tokv"]')
+                print("Score acquired")
+
+                for name in names:
+                    print("Name input: ", name.text)
+                    ggbet_names.append(name.text)
+
+                for score in scores:
+                    ggbet_scores.append(float(score.text))
+                    print("Score current list: ", ggbet_scores)
+
+            except:
+                continue
+    
+
+    print(len(ggbet_names))
+    print("Final score list: ", ggbet_scores)
+    
+    verify_matchups("ggbet_matchups", ggbet_names, ggbet_scores)
+
+
+    return [ggbet_names, ggbet_scores]
+
+

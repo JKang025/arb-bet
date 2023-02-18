@@ -2,7 +2,7 @@ from webscraper import luckbox, pinnacle
 from webscraper import luckbox
 from webscraper import pinnacle
 from webscraper import vulkan
-from webscraper import temporary
+from webscraper import ggbet
 from calculations import Graph
 from utils import nameStandardize, sendMail, nameProcessing, mapify, objectify
 import schedule
@@ -17,7 +17,7 @@ def main():
 
     
     
-    luckboxInfo = luckbox()
+    ggbetInfo = ggbet()
     # luckboxTeamNames = luckboxInfo[0]
     # luckboxScores = luckboxInfo[1]
     # pinnacleInfo = pinnacle()
