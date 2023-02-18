@@ -59,7 +59,7 @@ def pinnacle():
     # Get rid of draw bets, which have same XPATH. Also save text from elements
     for i in (range(len(team_names_temp))):
         if team_names_temp[i].text != "Draw":
-            if(scores[i].text != ''):
+            if(scores_temp[i].text != ''):
                 team_names.append(team_names_temp[i].text)
                 scores.append(float(scores_temp[i].text))
 

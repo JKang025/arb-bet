@@ -3,7 +3,7 @@ from webscraper import luckbox
 from webscraper import pinnacle
 from webscraper import vulkan
 from calculations import Graph
-from utils import nameProcessing, sendMail
+from utils import nameStandardize, sendMail, nameProcessing, mapify, objectify
 import schedule
 import time
 
@@ -35,13 +35,21 @@ def script():
     try:
         luckboxInfo = luckbox()
         luckboxTeamNames = luckboxInfo[0]
-        luckboxTeamNames = nameProcessing(luckboxTeamNames)
+        luckboxTeamNames = nameStandardize(luckboxTeamNames)
         luckboxScores = luckboxInfo[1]
+        luckbox_objs = objectify(luckboxScores, luckboxTeamNames, "Luckbox")
+
 
         pinnacleInfo = pinnacle()
         pinnacleTeamNames = pinnacleInfo[0]
-        pinnacleTeamNames = nameProcessing(pinnacleTeamNames)
+        pinnacleTeamNames = nameStandardize(pinnacleTeamNames)
         pinnacleScores = pinnacleInfo[1]
+        pinnacle_objs = objectify(pinnacleScores, pinnacleTeamNames, "Pinnacle")
+        
+        joined = luckbox_objs + pinnacle_objs
+
+        the_map = mapify(joined)
+
 
 
         g = Graph()
