@@ -20,7 +20,6 @@ class Graph:
         return False
 
     def initialize_graph(self, website, team_names, scores):
-    # website = "Pinnacle"
         for i in range(0, len(team_names), 2):
 
             team_1 = team_names[i]
@@ -31,7 +30,6 @@ class Graph:
 
             self.graph[team_1].scores[team_2] = scores[i] #input odds of team 1 winning against team 2
             self.graph[team_2].scores[team_1] = scores[i+1]
-
 
 
     # Prints graph
@@ -85,10 +83,3 @@ class Graph:
                 # print(self.graph[team_1].team, ", " , old_score_1, " : ", self.graph[team_2].team, ", ", old_score_2,", ",arb)
 
         return arb_opportunities
-
-
-
-
-
-
-

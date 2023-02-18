@@ -210,17 +210,15 @@ def ggbet():
                 names = element.find_elements(By.XPATH, './/*[@class="oddButton__title___eYYGG"]')
                 scores = element.find_elements(By.XPATH, './/*[@class="oddButton__coef___2tokv"]')
 
-                if len(name) == len(scores):
+                counter = 0
+                for score in scores:
+                    if not score.text == "-": # if score is not null, append
+                        ggbet_scores.append(float(score.text))
+                        counter += 1
+
+                if counter == 2:
                     for name in names:
                         ggbet_names.append(name.text)
-                        print("Name: ", name, " ", end="")
-
-
-                    for score in scores:
-                        ggbet_scores.append(float(score.text))
-                        print("Score: ", score, " ", end="")
-
-                print("\n")
 
             except:
                 continue
@@ -232,6 +230,8 @@ def ggbet():
     print(ggbet_scores)
     
     verify_matchups("ggbet_matchups", ggbet_names, ggbet_scores)
+
+    verify_HTML("ggbet_HTML", driver.page_source)
 
 
     return "GGBet", ggbet_names, ggbet_scores
