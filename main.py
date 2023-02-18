@@ -15,9 +15,24 @@ def main():
     #     schedule.run_pending()
     #     time.sleep(60)
 
+    # Initialize graph with Pinnacle
+    # website, names, scores = pinnacle()
+    # g = Graph()
+    # g.initialize_graph(website, names, scores)
+
+    # Update graph with other scrapers
+    # scrapers = [luckbox, vulkan, ggbet]
+
+    # for scraper in scrapers:
+    #     website, names, scores = scraper()
+    #     g.update_graph(website, names, scores)
+
+
+    luckbox_1 = ggbet()
     
-    
-    ggbetInfo = ggbet()
+    # ggbetInfo = ggbet()
+    # ggbetTeamNames = ggbetInfo[0]
+    # ggbetScores = ggbetInfo[1]
     # luckboxTeamNames = luckboxInfo[0]
     # luckboxScores = luckboxInfo[1]
     # pinnacleInfo = pinnacle()
@@ -27,13 +42,13 @@ def main():
     # vulkanTeamNames = vulkanInfo[0]
     # vulkanScores = vulkanInfo[1]
 
-    # temp = temporary()
 
-    # g = Graph()
-    # g.initialize_graph("Pinnacle", pinnacleTeamNames, pinnacleScores)
+    # temp = temporary()
     # g.update_graph("Luckbox", luckboxTeamNames, luckboxScores)
     # g.update_graph("Vulkan", vulkanTeamNames, vulkanScores)
-    # g.output_graph()
+    # g.update_graph("GGBet", ggbetTeamNames, ggbetScores)
+    # g.output_graph("output.txt")
+
 
 def script():
     try:

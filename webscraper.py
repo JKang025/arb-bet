@@ -31,7 +31,7 @@ def setUp():
 # Verify team names, scores, and matchups
 def verify_matchups(file, team_names, scores):
     with open(file, "w") as f:
-        for i in range(0,len(team_names),2):
+        for i in range(0,len(scores),2):
             f.write(team_names[i] + ", " + str(scores[i]) + " : " + team_names[i+1] + ", " + str(scores[i+1]) + "\n")
 
 # Verify HTML that was parsed
@@ -70,32 +70,7 @@ def pinnacle():
     # Write output (just for confirmation)
     verify_HTML("pinnacle_HTML", driver.page_source)
 
-    return [team_names, scores]
-
-
-
-def temporary():
-    # See all matches
-    driver = setUp()
-    driver.get("https://luckbox.com/?games=league-of-legends")
-
-    # Configure cookies
-    WebDriverWait(driver, 60).until(
-        EC.presence_of_element_located((By.XPATH, '//button[@data-cookiefirst-action="adjust"]'))
-    )
-
-    cookie_button = driver.find_element(By.XPATH, '//button[@data-cookiefirst-action="adjust"]')
-    cookie_button.click()
-
-    WebDriverWait(driver, 60).until(
-        EC.presence_of_element_located((By.XPATH, '//button[@data-cookiefirst-action="save"]'))
-    )
-
-    save_button = driver.find_element(By.XPATH, '//button[@data-cookiefirst-action="save"]')
-    save_button.click()
-
-    driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
-
+    return "Pinnacle", team_names, scores
 
 # Helper – scroll to end of page with (in)finite loading
 def auto_scroll(driver):
@@ -114,8 +89,6 @@ def auto_scroll(driver):
             break
         else: # else: keep scrolling
             height = new_height
-
-
 
 ################################################
 # From Luckbox
@@ -147,9 +120,9 @@ def luckbox():
 
     # Scroll to button to reveal all matches
     driver.execute_script("arguments[0].scrollIntoView(true);", match_button) # for some reason this line overshoots, so scroll back up in next two lines
-    time.sleep(1)
-    driver.execute_script("window.scrollBy(0,-250)", "")
-    print("Advanced3")
+    time.sleep(3)
+    driver.execute_script("window.scrollBy(0,-400)", "")
+    time.sleep(3)
 
     match_button.click()
 
@@ -161,13 +134,11 @@ def luckbox():
     luckbox_names = []
     luckbox_scores = []
 
-    import time
     time.sleep(5)
 
     # Get rid of draw odds. Also save text from elements
     for i in (range(len(luckbox_names_temp))):
         if luckbox_names_temp[i].text != "Draw":
-            print("Not draw! ", luckbox_names_temp[i].text)
             if(luckbox_scores_temp[i].text != ''):
                 luckbox_names.append(luckbox_names_temp[i].text)
                 luckbox_scores.append(float(luckbox_scores_temp[i].text))
@@ -178,7 +149,7 @@ def luckbox():
     verify_HTML("luckbox_HTML", driver.page_source)
 
     
-    return [luckbox_names, luckbox_scores]
+    return "Luckbox", luckbox_names, luckbox_scores
 
 ################################################
 # From Vulkan
@@ -199,8 +170,8 @@ def vulkan():
     for i in (range(len(vulkan_temp))):
         vulkan_title = vulkan_temp[i].get_attribute("title")
 
-        # not including over/under odds
-        if not vulkan_title.startswith("over") and not vulkan_title.startswith("under") and not "(" in vulkan_title:
+        # not including over/under odds, draw odds, or total odds
+        if not (vulkan_title.startswith("over") or vulkan_title.startswith("under") or (any([x in vulkan_title for x in ["Draw", "("]]))):
             semicolon_index = vulkan_title.find(":")
             vulkan_names.append(vulkan_title[:semicolon_index])
             vulkan_scores.append(float(vulkan_temp[i].text))
@@ -210,7 +181,7 @@ def vulkan():
     # verify HTML output
     verify_HTML("vulkan_HTML", driver.page_source)
 
-    return [vulkan_names, vulkan_scores]
+    return "Vulkan", vulkan_names, vulkan_scores
 
 ################################################
 # GGBet
@@ -218,11 +189,8 @@ def get_more_links(number):
     link = "https://ggbet.com/en/?page=" + str(number) + "&sportIds[]=esports_league_of_legends"
 
 
-
 def ggbet():
     driver = setUp()
-    link_init = "https://ggbet.com/en/live?sportIds%5B%5D=esports_league_of_legends"
-
     driver.get('https://ggbet.com/en/live?sportIds%5B%5D=esports_league_of_legends')
 
     # Element contains two nested elements. Check the first to see if it's "winner", i.e. the bet we're looking for
@@ -238,32 +206,34 @@ def ggbet():
         header = element.find_element(By.XPATH, './/*[@class="__app-Market-name market__name___2HszL"]') # find element within parent
 
         if header.text == "Winner": # if header is the correct one for odds (there are three headers)
-            print("Winner")
-
             try: # some scores are hidden; if that's the case, don't append
                 names = element.find_elements(By.XPATH, './/*[@class="oddButton__title___eYYGG"]')
-                print("Name acquired")
                 scores = element.find_elements(By.XPATH, './/*[@class="oddButton__coef___2tokv"]')
-                print("Score acquired")
 
-                for name in names:
-                    print("Name input: ", name.text)
-                    ggbet_names.append(name.text)
+                if len(name) == len(scores):
+                    for name in names:
+                        ggbet_names.append(name.text)
+                        print("Name: ", name, " ", end="")
 
-                for score in scores:
-                    ggbet_scores.append(float(score.text))
-                    print("Score current list: ", ggbet_scores)
+
+                    for score in scores:
+                        ggbet_scores.append(float(score.text))
+                        print("Score: ", score, " ", end="")
+
+                print("\n")
 
             except:
                 continue
     
 
     print(len(ggbet_names))
-    print("Final score list: ", ggbet_scores)
+    print(ggbet_names)
+    print(len(ggbet_scores))
+    print(ggbet_scores)
     
     verify_matchups("ggbet_matchups", ggbet_names, ggbet_scores)
 
 
-    return [ggbet_names, ggbet_scores]
+    return "GGBet", ggbet_names, ggbet_scores
 
 

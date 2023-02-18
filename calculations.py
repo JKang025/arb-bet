@@ -35,16 +35,15 @@ class Graph:
 
 
     # Prints graph
-    def output_graph(self):
-        for element in self.graph:
-            print(element, " : ", self.graph[element].website, " : [", end="")
+    def output_graph(self, file):
+        with open(file, "w") as f:
+            for element in self.graph:
+                f.write(element, " : ", self.graph[element].website, " : [", end="")
 
-            for neighbor in self.graph[element].scores:
-                print(neighbor, " - ", self.graph[element].scores[neighbor], end="")
+                for neighbor in self.graph[element].scores:
+                    f.write(neighbor, " - ", self.graph[element].scores[neighbor], end="")
 
-            print("]")
-
-
+                f.write("]")
 
     def update_graph(self, website, team_names, scores):
 
