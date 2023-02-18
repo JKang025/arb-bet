@@ -129,7 +129,7 @@ def luckbox():
     # See all matches – first click button that asks to see all matches, then scroll to load
     auto_scroll(driver)
 
-    luckbox_names_temp = driver.find_elements(By.XPATH, '//*[@class="team-name"]' or '//*[@class="draw"]') #draw odds are included here so we can identify/remove them in list of scores
+    luckbox_names_temp = driver.find_elements(By.XPATH, '//*[@class="team-name" or @class="draw"]') #draw odds are included here so we can identify/remove them in list of scores
     luckbox_scores_temp = driver.find_elements(By.XPATH, '//*[@class="odds"]') #includes draw odds
     luckbox_names = []
     luckbox_scores = []
@@ -137,11 +137,25 @@ def luckbox():
     time.sleep(5)
 
     # Get rid of draw odds. Also save text from elements
+
+    # luckbox_left_temp = driver.find_elements(By.XPATH, '//button[@class="lb-btn team-side team-left is-clickable"]')
+    # luckbox_right_temp = driver.find_elements(By.XPATH, '//button[@class="lb-btn team-side team-right is-clickable"]')
+
+
+
     for i in (range(len(luckbox_names_temp))):
-        if luckbox_names_temp[i].text != "Draw":
-            if(luckbox_scores_temp[i].text != ''):
+        print(luckbox_names_temp[i].text)
+
+    for i in (range(len(luckbox_names_temp))):
+        if not "draw" in luckbox_names_temp[i].text.lower().strip():
+            if luckbox_scores_temp[i].text != '':
+                print("Not skipping")
                 luckbox_names.append(luckbox_names_temp[i].text)
+                print("Still not skipping")
                 luckbox_scores.append(float(luckbox_scores_temp[i].text))
+
+        else:
+            print("Poo")
 
     verify_matchups("luckbox_matchups", luckbox_names, luckbox_scores)
 

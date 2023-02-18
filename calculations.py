@@ -12,10 +12,10 @@ class Graph:
         self.graph = {}
     # Inserts nodes into graph
 
-    def initialize_node(self, website, team):
+    def initialize_node(self, team):
         if team not in self.graph:
-            new_node = Node(website, {})
-            self.graph[team] = new_node
+            # new_node = Node(website, {})
+            self.graph[team] = {}
             return True
         return False
 
@@ -25,23 +25,22 @@ class Graph:
             team_1 = team_names[i]
             team_2 = team_names[i+1]
 
-            self.initialize_node(website, team_1)
-            self.initialize_node(website, team_2)
+            self.initialize_node(team_1)
+            self.initialize_node(team_2)
 
-            self.graph[team_1].scores[team_2] = scores[i] #input odds of team 1 winning against team 2
-            self.graph[team_2].scores[team_1] = scores[i+1]
-
+            self.graph[team_1][team_2] = [website, scores[i]] #input odds of team 1 winning against team 2
+            self.graph[team_2][team_1] = [website, scores[i+1]]
 
     # Prints graph
     def output_graph(self, file):
         with open(file, "w") as f:
             for element in self.graph:
-                f.write(element, " : ", self.graph[element].website, " : [", end="")
+                f.write(element + " : [")
 
-                for neighbor in self.graph[element].scores:
-                    f.write(neighbor, " - ", self.graph[element].scores[neighbor], end="")
+                for neighbor in self.graph[element]:
+                    f.write(neighbor + " - " + self.graph[element][neighbor][0] + " - " + str(self.graph[element][neighbor][1]) + "      ")
 
-                f.write("]")
+                f.write("]" + "\n")
 
     def update_graph(self, website, team_names, scores):
 
@@ -52,21 +51,21 @@ class Graph:
             team_2 = team_names[i+1]
 
              # if either team is not in graph yet, initialize
-            if self.initialize_node(website, team_1) or self.initialize_node(website, team_2):
-                self.initialize_node(website, team_2)
-                print("Inputting either: ",team_1, ", ", team_2)
+            if self.initialize_node(team_1) or self.initialize_node(team_2):
+                self.initialize_node(team_2)
+                # print("Inputting either: ",team_1, ", ", team_2)
 
             # if both teams are in graphs but don't have matchup against each other
             # note that we only have to check one edge, since either both edges exist or neither
-            if team_2 not in self.graph[team_1].scores:
-                self.graph[team_1].scores[team_2] = scores[i] #input odds of team 1 winning against team 2
-                self.graph[team_2].scores[team_1] = scores[i+1]
-                print("Inputting scores for: ",team_1, ", ", team_2)
+            if team_2 not in self.graph[team_1]:
+                self.graph[team_1][team_2] = [website, scores[i]]
+                self.graph[team_2][team_1] = [website, scores[i+1]]
+                # print("Inputting scores for: ",team_1, ", ", team_2)
 
             # else: both teams are already in graph
             else:
-                old_score_1 = self.graph[team_1].scores[team_2]
-                old_score_2 = self.graph[team_2].scores[team_1]
+                old_score_1 = self.graph[team_1][team_2][1]
+                old_score_2 = self.graph[team_2][team_1][1]
                 
                 if scores[i] > old_score_1: #if current odds (scores[i]) < past odds (score_1), replace it
                     old_score_1 = scores[i]
