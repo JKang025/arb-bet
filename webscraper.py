@@ -9,6 +9,7 @@ import pandas as pd
 import requests
 import os
 import random
+import time
 
 
 def setUp():
@@ -73,6 +74,48 @@ def pinnacle():
 
 
 
+def temporary():
+    # See all matches
+    driver = setUp()
+    driver.get("https://luckbox.com/?games=league-of-legends")
+
+    # Configure cookies
+    WebDriverWait(driver, 60).until(
+        EC.presence_of_element_located((By.XPATH, '//button[@data-cookiefirst-action="adjust"]'))
+    )
+
+    cookie_button = driver.find_element(By.XPATH, '//button[@data-cookiefirst-action="adjust"]')
+    cookie_button.click()
+
+    WebDriverWait(driver, 60).until(
+        EC.presence_of_element_located((By.XPATH, '//button[@data-cookiefirst-action="save"]'))
+    )
+
+    save_button = driver.find_element(By.XPATH, '//button[@data-cookiefirst-action="save"]')
+    save_button.click()
+
+    driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
+
+
+# Helper – scroll to end of page with (in)finite loading
+def auto_scroll(driver):
+    import time
+    
+    pause_time = 3
+    height = driver.execute_script("return document.body.scrollHeight")
+
+    while True:
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
+        time.sleep(pause_time)
+
+        # If curr height is same as prev, don't scroll anymore
+        new_height = driver.execute_script("return document.body.scrollHeight")
+        if new_height == height:
+            break
+        else: # else: keep scrolling
+            height = new_height
+
+
 
 ################################################
 # From Luckbox
@@ -95,10 +138,23 @@ def luckbox():
     save_button = driver.find_element(By.XPATH, '//button[@data-cookiefirst-action="save"]')
     save_button.click()
 
-    # Get matchups
+    # Wait until website loads properly
     WebDriverWait(driver, 60).until(
-        EC.presence_of_element_located((By.XPATH, '//*[@class="team-name"]'))
+        EC.element_to_be_clickable((By.XPATH, '//button[@class="link-to-matches lb-btn btn-color-dark btn-size-medium btn-full-width btn-uppercased"]'))
     )
+
+    match_button = driver.find_element(By.XPATH, '//button[@class="link-to-matches lb-btn btn-color-dark btn-size-medium btn-full-width btn-uppercased"]')
+
+    # Scroll to button to reveal all matches
+    driver.execute_script("arguments[0].scrollIntoView(true);", match_button) # for some reason this line overshoots, so scroll back up in next two lines
+    time.sleep(1)
+    driver.execute_script("window.scrollBy(0,-250)", "")
+    print("Advanced3")
+
+    match_button.click()
+
+    # See all matches – first click button that asks to see all matches, then scroll to load
+    auto_scroll(driver)
 
     luckbox_names_temp = driver.find_elements(By.XPATH, '//*[@class="team-name"]' or '//*[@class="draw"]') #draw odds are included here so we can identify/remove them in list of scores
     luckbox_scores_temp = driver.find_elements(By.XPATH, '//*[@class="odds"]') #includes draw odds
@@ -155,3 +211,18 @@ def vulkan():
     verify_HTML("vulkan_HTML", driver.page_source)
 
     return [vulkan_names, vulkan_scores]
+
+################################################
+# GGBet
+def ggbet():
+    driver = setUp()
+    driver.get('https://www.bovada.lv/sports/esports/league-of-legends')
+
+    # Wait until appropriate elements are loaded
+    WebDriverWait(driver, 60).until(
+        EC.presence_of_element_located((By.XPATH, '//button[@class="__app-Odd-button odd__button___2eiZg"]'))
+    )
+
+    vulkan_temp = driver.find_elements(By.XPATH, '//*[@class="__app-Odd-button odd__button___2eiZg"]')
+    vulkan_names = []
+    vulkan_scores = []

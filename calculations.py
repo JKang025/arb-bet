@@ -32,7 +32,6 @@ class Graph:
             self.graph[team_1].scores[team_2] = scores[i] #input odds of team 1 winning against team 2
             self.graph[team_2].scores[team_1] = scores[i+1]
 
-    
 
 
     # Prints graph
