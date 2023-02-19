@@ -2,6 +2,7 @@ from webscraper import luckbox, pinnacle, vulkan
 from webscraper import luckbox
 from webscraper import pinnacle
 from webscraper import vulkan
+from webscraper import ggbet
 from calculations import Graph
 from utils import nameStandardize, sendMail, nameProcessing, mapify, objectify
 import schedule
