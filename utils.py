@@ -23,10 +23,10 @@ class scoreObj:
         return self.og_name + " | " + self.name + " | " + self.modifer + " | " + str(self.score) + " | " + self.website
 
 
-def objectify(scores, names, website):
+def objectify(scores, names, website, counter):
     s = set()
     for i in range(len(scores)):
-        obj = scoreObj(scores[i], names[i], website, i)
+        obj = scoreObj(scores[i], names[i], website, i + counter + 1)
         s.add(obj)
     return s
 
