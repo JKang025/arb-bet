@@ -3,6 +3,7 @@ from email.message import EmailMessage
 import string
 from difflib import get_close_matches, SequenceMatcher
 import sys
+import json
 
 class scoreObj:
     def __init__(self, score, name, website, matchid):
@@ -95,12 +96,17 @@ def sendMail(email_message):
     PORT = 465  
     SMTP_SERVER = "smtp.gmail.com"
 
+    #credentials located in json file, format as given in example_credentials.json
+    with open('credentials.json', 'r') as fp:
+        data = json.load(fp)
+
+
     #google account app password
     #refer to https://support.google.com/accounts/answer/185833
-    APP_PASSWORD = "hmfocxnsgljbezsf"
+    APP_PASSWORD = data['app_password']
 
-    SENDER_EMAIL = "arbbetproject@gmail.com"
-    RECIEVER_EMAIL = "arbbetproject@gmail.com"
+    SENDER_EMAIL = data['sender_email']
+    RECIEVER_EMAIL = "knightdips@gmail.com"
     
     #creating message object
     msg = EmailMessage()
