@@ -33,14 +33,20 @@ class Graph:
 
     # Prints graph
     def output_graph(self, file):
+        printed_teams = [] # list of printed teams so if they were visited again, the matchup doesn't get printed again
+
         with open(file, "w") as f:
             for element in self.graph:
-                f.write(element + " : [")
-
                 for neighbor in self.graph[element]:
-                    f.write(neighbor + " - " + self.graph[element][neighbor][0] + " - " + str(self.graph[element][neighbor][1]) + "      ")
+                    if neighbor not in printed_teams:
+                        f.write(element + ", " + self.graph[element][neighbor][0] + ", " + str(self.graph[element][neighbor][1]))
+                        f.write("\t - \t")
+                        f.write(str(self.graph[neighbor][element][1]) + ", " + self.graph[neighbor][element][0] + ", " + neighbor)
+                        f.write("\t : \t")
+                        f.write(str(round(1/self.graph[neighbor][element][1] + 1/self.graph[element][neighbor][1],2)))
+                        f.write("\n")
+                        printed_teams.append(neighbor)
 
-                f.write("]" + "\n")
 
     def update_graph(self, website, team_names, scores):
 
@@ -68,10 +74,14 @@ class Graph:
                 old_score_2 = self.graph[team_2][team_1][1]
                 
                 if scores[i] > old_score_1: #if current odds (scores[i]) < past odds (score_1), replace it
-                    old_score_1 = scores[i]
+                    self.graph[team_1][team_2][1] = scores[i]
+                    self.graph[team_1][team_2][0] = website
+                    print("Found lower score")
 
                 if scores[i+1] > old_score_2: #if prev odds > current odds, replace it
-                    old_score_2 = scores[i+1]
+                    self.graph[team_2][team_1][1] = scores[i+1]
+                    self.graph[team_2][team_1][0] = website
+                    print("Found lower score")
 
                 # Arb opportunity!
                 arb = 1/old_score_1 + 1/old_score_2
@@ -79,6 +89,7 @@ class Graph:
                     print("WORKS")
                     arb_opportunities = team_1 + ", " + str(old_score_1) + " : " + team_2 + ", ", str(old_score_2), " : " + str(arb) + '\n'
                     print(arb_opportunities)
+                
                 # print(self.graph[team_1].team, ", " , old_score_1, " : ", self.graph[team_2].team, ", ", old_score_2,", ",arb)
 
         return arb_opportunities

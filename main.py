@@ -16,21 +16,21 @@ def main():
     #     time.sleep(60)
 
     # Initialize graph with Pinnacle
-    # website, names, scores = pinnacle()
-    # g = Graph()
-    # g.initialize_graph(website, names, scores)
+    website, names, scores = pinnacle()
+    g = Graph()
+    g.initialize_graph(website, names, scores)
 
     # Update graph with other scrapers
-    # scrapers = [luckbox, vulkan, ggbet]
-    # for scraper in scrapers:
-    #     print("\n\n\n\n-------------------\nNEW: ", website)
-    #     website, names, scores = scraper()
-    #     g.update_graph(website, names, scores)
+    scrapers = [luckbox, vulkan, ggbet]
+    for scraper in scrapers:
+        website, names, scores = scraper()
+        print("\n\n\n\n-------------------\nNEW: ", website)
+        g.update_graph(website, names, scores)
 
     # Output graph for verification
-    # g.output_graph("output.txt")
-
-    luckbox_1 = luckbox()
+    g.output_graph("output.txt")
+ 
+    # luckbox_1 = vulkan()
     
     # ggbetInfo = ggbet()
     # ggbetTeamNames = ggbetInfo[0]

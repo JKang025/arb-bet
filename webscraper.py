@@ -15,7 +15,7 @@ import time
 def setUp():
     driver_path = '/path/to/chromedriver'
     options = Options()
-    options.headless = False #headless mode so popup doesn't pop up
+    options.headless = True #headless mode so popup doesn't pop up
     driver = webdriver.Chrome(options=options, executable_path=driver_path)
     os.chdir(os.path.dirname(__file__))
     print("Directory: ", os.getcwd)
@@ -149,13 +149,8 @@ def luckbox():
     for i in (range(len(luckbox_names_temp))):
         if not "draw" in luckbox_names_temp[i].text.lower().strip():
             if luckbox_scores_temp[i].text != '':
-                print("Not skipping")
                 luckbox_names.append(luckbox_names_temp[i].text)
-                print("Still not skipping")
                 luckbox_scores.append(float(luckbox_scores_temp[i].text))
-
-        else:
-            print("Poo")
 
     verify_matchups("luckbox_matchups", luckbox_names, luckbox_scores)
 
@@ -175,6 +170,7 @@ def vulkan():
     WebDriverWait(driver, 60).until(
         EC.presence_of_element_located((By.XPATH, '//button[@class="__app-Odd-button odd__button___2eiZg"]'))
     )
+    time.sleep(1)
 
     vulkan_temp = driver.find_elements(By.XPATH, '//*[@class="__app-Odd-button odd__button___2eiZg"]')
     vulkan_names = []
