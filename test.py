@@ -26,7 +26,7 @@ for obj in the_set:
 luckbox_final_name = []
 luckbox_final_score = []
 
-pin_final_name = []
+pin_final_name = [] 
 pin_final_score = []
 
 for obj in the_set:
@@ -39,8 +39,15 @@ for obj in the_set:
 
 g = Graph()
 g.initialize_graph("Pinnacle", pin_final_name, pin_final_score)
-result = g.update_graph("Luckbox", luckbox_final_name, luckbox_final_score)
-g.output_graph
-print(result)
+# result = g.update_graph("Luckbox", luckbox_final_name, luckbox_final_score)
+print("\n\n\n----------\n")
+# g.output_graph
+
+
+for node in g:
+    print("There is a node here")
+
+
+# print(result)
 #webscraper.pinnacle()
 

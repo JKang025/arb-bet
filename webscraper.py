@@ -15,7 +15,7 @@ import time
 def setUp():
     driver_path = '/path/to/chromedriver'
     options = Options()
-    options.headless = True #headless mode so popup doesn't pop up
+    options.headless = False #headless mode so popup doesn't pop up
     driver = webdriver.Chrome(options=options, executable_path=driver_path)
     os.chdir(os.path.dirname(__file__))
     print("Directory: ", os.getcwd)
@@ -48,12 +48,13 @@ def pinnacle():
 
     # Wait until website loads properly
     WebDriverWait(driver, 60).until(
-        EC.presence_of_element_located((By.XPATH, '//*[@class="style_price__3ZXqH style_drawPrice__1lAp7"]'))
+        EC.presence_of_element_located((By.XPATH, '//*[@class="style_price__3za-3 style_drawPrice__nWvMQ"]'))
     )
 
     # Get elements, output into txt file for validation
-    team_names_temp = driver.find_elements(By.XPATH, '//*[@class="style_teamName__24KNG style_teamName__3jTXF ellipsis style_drawTeamName__3xViy"]')
-    scores_temp = driver.find_elements(By.XPATH, '//*[@class="style_price__3ZXqH style_drawPrice__1lAp7"]')
+    team_names_temp = driver.find_elements(By.XPATH, '//*[@class="style_teamName__x-Xvb style_teamName__138sz ellipsis style_drawTeamName__23rXu"]')
+    scores_temp = driver.find_elements(By.XPATH, '//*[@class="style_price__3za-3 style_drawPrice__nWvMQ"]')
+    print("Length bitch" , len(team_names_temp))
     team_names = []
     scores = []
 
@@ -69,6 +70,8 @@ def pinnacle():
 
     # Write output (just for confirmation)
     verify_HTML("pinnacle_HTML", driver.page_source)
+
+    print("Scores: ", scores)
 
     return "Pinnacle", team_names, scores
 
@@ -143,8 +146,8 @@ def luckbox():
 
 
 
-    for i in (range(len(luckbox_names_temp))):
-        print(luckbox_names_temp[i].text)
+    # for i in (range(len(luckbox_names_temp))):
+        # print(luckbox_names_temp[i].text)
 
     for i in (range(len(luckbox_names_temp))):
         if not "draw" in luckbox_names_temp[i].text.lower().strip():
@@ -168,23 +171,38 @@ def vulkan():
 
     # Wait until appropriate elements are loaded
     WebDriverWait(driver, 60).until(
-        EC.presence_of_element_located((By.XPATH, '//button[@class="__app-Odd-button odd__button___2eiZg"]'))
+        EC.presence_of_element_located((By.XPATH, '//*[@class="__app-MarketDefault-odds Market__odds___20I7f"]'))
     )
     time.sleep(1)
 
-    vulkan_temp = driver.find_elements(By.XPATH, '//*[@class="__app-Odd-button odd__button___2eiZg"]')
+    vulkan_temp = driver.find_elements(By.XPATH, '//*[@class="__app-MarketDefault-odds Market__odds___20I7f"]')
     vulkan_names = []
     vulkan_scores = []
+    
+    for element in vulkan_temp:
+        try: # some scores are hidden; if that's the case, don't append
+            buttons = element.find_elements(By.XPATH, './/*[@class="__app-OddButton-container oddButton__container___36P6_ oddButton__is-active___2st2r "]') # two buttons for each team
+            
+            for button in buttons:
+                vulkan_names.append(button.get_attribute("title"))
+                vulkan_scores.append(float(button.find_element(By.XPATH, './/*[@class="oddButton__coef___2tokv"]').text))
 
-    # Get rid of draw odds. Also save text from elements
-    for i in (range(len(vulkan_temp))):
-        vulkan_title = vulkan_temp[i].get_attribute("title")
+        except:
+            continue
+    
 
-        # not including over/under odds, draw odds, or total odds
-        if not (vulkan_title.startswith("over") or vulkan_title.startswith("under") or (any([x in vulkan_title for x in ["Draw", "("]]))):
-            semicolon_index = vulkan_title.find(":")
-            vulkan_names.append(vulkan_title[:semicolon_index])
-            vulkan_scores.append(float(vulkan_temp[i].text))
+
+    # vulkan_temp.
+
+    # # Get rid of draw odds. Also save text from elements
+    # for i in (range(len(vulkan_temp))):
+    #     vulkan_title = vulkan_temp[i].get_attribute("title")
+
+    #     # not including over/under odds, draw odds, or total odds
+    #     # if not (vulkan_title.startswith("over") or vulkan_title.startswith("under") or (any([x in vulkan_title for x in ["Draw", "("]]))):
+    #     semicolon_index = vulkan_title.find(":")
+    #         vulkan_names.append(vulkan_title[:semicolon_index])
+    #         vulkan_scores.append(float(vulkan_temp[i].text))
 
     verify_matchups("vulkan_matchups", vulkan_names, vulkan_scores)
 
