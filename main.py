@@ -66,7 +66,7 @@ def script():
                 vulkan_final_score.append(obj.score)
             elif(obj.website == 'ggbet'):
                 ggbet_final_name.append(obj.name)
-                ggbet_final_score.append(obj.name)
+                ggbet_final_score.append(obj.score)
 
         g = Graph()
         g.initialize_graph("Pinnacle", pin_final_name, pin_final_score)

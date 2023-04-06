@@ -10,6 +10,7 @@ import json
 # scores, website, and other releveant information
 class scoreObj:
     def __init__(self, score, name, website, matchid):
+        self.opp_score = {}
         self.score = score
         self.website = website 
         self.og_name = name
