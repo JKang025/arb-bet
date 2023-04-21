@@ -48,12 +48,12 @@ def pinnacle():
 
     # Wait until website loads properly
     WebDriverWait(driver, 60).until(
-        EC.presence_of_element_located((By.XPATH, '//*[@class="style_price__3za-3 style_drawPrice__nWvMQ"]'))
+        EC.presence_of_element_located((By.XPATH, '//*[@class="style_price__3ZXqH style_drawPrice__1lAp7"]'))
     )
 
     # Get elements, output into txt file for validation
-    team_names_temp = driver.find_elements(By.XPATH, '//*[@class="style_teamName__x-Xvb style_teamName__138sz ellipsis style_drawTeamName__23rXu"]')
-    scores_temp = driver.find_elements(By.XPATH, '//*[@class="style_price__3za-3 style_drawPrice__nWvMQ"]')
+    team_names_temp = driver.find_elements(By.XPATH, '//*[@class="style_teamName__24KNG style_teamName__3jTXF ellipsis style_drawTeamName__3xViy"]')
+    scores_temp = driver.find_elements(By.XPATH, '//*[@class="style_price__3ZXqH style_drawPrice__1lAp7"]')
     print("Length bitch" , len(team_names_temp))
     team_names = []
     scores = []
@@ -116,20 +116,23 @@ def luckbox():
 
     # Wait until website loads properly
     WebDriverWait(driver, 60).until(
-        EC.element_to_be_clickable((By.XPATH, '//button[@class="link-to-matches lb-btn btn-color-dark btn-size-medium btn-full-width btn-uppercased"]'))
+        EC.element_to_be_clickable((By.XPATH, '//*[@class="odds"]'))
     )
 
-    match_button = driver.find_element(By.XPATH, '//button[@class="link-to-matches lb-btn btn-color-dark btn-size-medium btn-full-width btn-uppercased"]')
-
     # Scroll to button to reveal all matches
-    driver.execute_script("arguments[0].scrollIntoView(true);", match_button) # for some reason this line overshoots, so scroll back up in next two lines
-    time.sleep(3)
-    driver.execute_script("window.scrollBy(0,-400)", "")
-    time.sleep(3)
+    try:
+        match_button = driver.find_element(By.XPATH, '//button[@class="link-to-matches lb-btn btn-color-dark btn-size-medium btn-full-width btn-uppercased"]')
+        driver.execute_script("arguments[0].scrollIntoView(true);", match_button) # for some reason this line overshoots, so scroll back up in next two lines
+        time.sleep(3)
+        driver.execute_script("window.scrollBy(0,-400)", "")
+        time.sleep(3)
+        match_button.click()
 
-    match_button.click()
+    #sometimes the match button isn't there, so else do nothing
+    except:
+        pass
 
-    # See all matches – first click button that asks to see all matches, then scroll to load
+    # scroll to reveal all matches
     auto_scroll(driver)
 
     luckbox_names_temp = driver.find_elements(By.XPATH, '//*[@class="team-name" or @class="draw"]') #draw odds are included here so we can identify/remove them in list of scores
