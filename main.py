@@ -10,11 +10,46 @@ import time
 
 
 def main():
-    schedule.every().hour.do(script)
-    while True:
-        schedule.run_pending()
-        time.sleep(60)
-        
+    # schedule.every().hour.do(script)
+    # while True:
+    #     schedule.run_pending()
+    #     time.sleep(60)
+
+    # Initialize graph with Pinnacle
+    website, names, scores = pinnacle()
+    g = Graph()
+    g.initialize_graph(website, names, scores)
+
+    # Update graph with other scrapers
+    scrapers = [luckbox, vulkan, ggbet]
+    for scraper in scrapers:
+        website, names, scores = scraper()
+        print("\n\n\n\n-------------------\nNEW: ", website)
+        g.update_graph(website, names, scores)
+
+    # Output graph for verification
+    g.output_graph("output.txt")
+ 
+    # luckbox_1 = vulkan()
+    
+    # ggbetInfo = ggbet()
+    # ggbetTeamNames = ggbetInfo[0]
+    # ggbetScores = ggbetInfo[1]
+    # luckboxTeamNames = luckboxInfo[0]
+    # luckboxScores = luckboxInfo[1]
+    # pinnacleInfo = pinnacle()
+    # pinnacleTeamNames = pinnacleInfo[0]
+    # pinnacleScores = pinnacleInfo[1]
+    # vulkanInfo = vulkan()
+    # vulkanTeamNames = vulkanInfo[0]
+    # vulkanScores = vulkanInfo[1]
+
+
+    # temp = temporary()
+    # g.update_graph("Luckbox", luckboxTeamNames, luckboxScores)
+    # g.update_graph("Vulkan", vulkanTeamNames, vulkanScores)
+    # g.update_graph("GGBet", ggbetTeamNames, ggbetScores)
+
 
 def script():
     try:

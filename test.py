@@ -39,7 +39,41 @@ ggbet_obj = objectify(ggbet_scores, ggbet_team_names, "ggbet", len(luckbox_objs)
 
 joined = luckbox_objs.union(pinnacle_objs).union(vulkan_obj).union(ggbet_obj)
 the_map = mapify(joined)
-list = nameProcessing(the_map)
+for key in the_map.keys():
+    for obj in the_map[key]:
+        print(obj)
+print("----------------------------------")
+the_set = nameProcessing(the_map)
+for obj in the_set:
+    print(obj)
+
+luckbox_final_name = []
+luckbox_final_score = []
+
+pin_final_name = [] 
+pin_final_score = []
+
+for obj in the_set:
+    if(obj.website == 'Luckbox'):
+        luckbox_final_name.append(obj.name)
+        luckbox_final_score.append(obj.score)
+    elif(obj.website == 'Pinnacle'):
+        pin_final_name.append(obj.name)
+        pin_final_score.append(obj.score)
+
+g = Graph()
+g.initialize_graph("Pinnacle", pin_final_name, pin_final_score)
+# result = g.update_graph("Luckbox", luckbox_final_name, luckbox_final_score)
+print("\n\n\n----------\n")
+# g.output_graph
+
+
+for node in g:
+    print("There is a node here")
+
+
+# print(result)
+#webscraper.pinnacle()
 
 a = processing()
 results = a.findArbitrage(list)
