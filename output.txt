@@ -1,0 +1,21 @@
+edward  youth, GGBet, 1.51	 - 	2.56, Pinnacle, lng	 : 	1.05
+lng, Pinnacle, 2.56	 - 	1.51, GGBet, edward  youth	 : 	1.05
+oh my dream, Pinnacle, 1.432	 - 	2.75, GGBet, lgd young	 : 	1.06
+lgd young, GGBet, 2.75	 - 	1.432, Pinnacle, oh my dream	 : 	1.06
+invictus young, GGBet, 1.19	 - 	4.49, GGBet, anyones legend young	 : 	1.06
+anyones legend young, GGBet, 4.49	 - 	1.19, GGBet, invictus young	 : 	1.06
+sbtc, Luckbox, 1.65	 - 	2.3, GGBet, cerberus	 : 	1.04
+cerberus, GGBet, 2.3	 - 	1.65, Luckbox, sbtc	 : 	1.04
+vitality, Pinnacle, 1.512	 - 	2.7, Luckbox, mad lions	 : 	1.03
+mad lions, Luckbox, 2.7	 - 	1.512, Pinnacle, vitality	 : 	1.03
+los grandes, GGBet, 2.18	 - 	1.653, Pinnacle, vivo keyd stars	 : 	1.06
+vivo keyd stars, Pinnacle, 1.653	 - 	2.18, GGBet, los grandes	 : 	1.06
+unicorns of love se, GGBet, 2.14	 - 	1.751, Pinnacle, los heretics	 : 	1.04
+los heretics, Pinnacle, 1.751	 - 	2.14, GGBet, unicorns of love se	 : 	1.04
+los heretics, Luckbox, 1.65	 - 	2.1, Luckbox, uol sexy edition	 : 	1.08
+sk prime, Luckbox, 2.7	 - 	1.495, Pinnacle, istanbul wildcats	 : 	1.04
+istanbul wildcats, Pinnacle, 1.495	 - 	2.7, Luckbox, sk prime	 : 	1.04
+bliss, Luckbox, 1.72	 - 	2.11, GGBet, chiefs	 : 	1.06
+chiefs, GGBet, 2.11	 - 	1.72, Luckbox, bliss	 : 	1.06
+lazy in life, GGBet, 1.57	 - 	2.28, GGBet, tackle	 : 	1.08
+tackle, GGBet, 2.28	 - 	1.57, GGBet, lazy in life	 : 	1.08
