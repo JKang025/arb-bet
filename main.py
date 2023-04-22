@@ -20,6 +20,7 @@ def main():
 
     args = parser.parse_args()
     script(args.gui, args.email)
+    
     if(args.refreshtime == "hour"):
         schedule.every(1).hour.do(script, args.gui, args.email)    
     elif(args.refreshtime == "day"):
@@ -27,7 +28,7 @@ def main():
     elif(args.refreshtime == "week"):
         schedule.every(1).week.do(script, args.gui, args.email) 
     elif(args.refreshtime == "minute"):
-        schedule.every(1).minute.do(script, args.gui, args.email) 
+        schedule.every(5).minute.do(script, args.gui, args.email) 
     else:
         print("pleas enter hour, day or month for refreshman. To use the default (day), enter nothing")
         sys.exit(0)
@@ -42,7 +43,6 @@ def script(gui, email):
         list_of_obj = []
         counter = 0
         scrapers = [pinnacle, luckbox, vulkan, ggbet]
-        print("wowee")
         for scraper in scrapers: 
             website, names, scores = scraper()
             names = nameStandardize(names)
@@ -64,7 +64,6 @@ def script(gui, email):
              print("does GUI stuff")
         
         if(email):
-            print('yayaybingga')
             if(len(g.list_of_arb_opp) == 0):
                   sendMail("There are no current arbitrage opperunities")
             else:
