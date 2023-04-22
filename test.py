@@ -14,7 +14,7 @@ counter = 0
 
 
 
-# Output graph for verification
+
 fakename1 = ['jeffrey', 'brian']
 fakescore1 = [5.0, 0.2]
 fakename2 = ['jeffrey', 'brian']
@@ -27,3 +27,16 @@ g = Graph()
 g.update_graph(final_list)
 g.output_graph("output.txt")
 print(g.list_of_arb_opp)
+
+def bruh():
+    scrapers = [pinnacle, luckbox, vulkan, ggbet]
+    for scraper in scrapers:
+        website, names, scores = scraper()
+        names = nameStandardize(names)
+        list_of_obj = list_of_obj + objectify(scores, names, website, counter)
+        counter = counter + len(names)
+        print("JEFFREY " + website)
+        print(names)
+        print(scores)
+        print("JEFFREY END")
+        print("\n\n\n\n-------------------\nNEW: ", website)
