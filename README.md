@@ -23,7 +23,7 @@ There are certain arguments that can be run with the program
 ```
 
 ### Usecase
-By default, the information - such as an arbitrage oppertunities - is outputed onto the console. However, if the program is run with the --gui flag, it will open a GUI that displays the relevant information. Furthermore, with the --email flag, the program will send an email containing arbitrage opperunities. The --refreshtime argument can be used to edit how often the program checks for opperunities; although we suspect checking every day will be more than sufficient, considering bets aren't updated frequently.
+By default, the information - such as an arbitrage opportunities - is outputed onto the console. However, if the program is run with the --gui flag, it will open a GUI that displays the relevant information. Furthermore, with the --email flag, the program will send an email containing arbitrage opportunities. The --refreshtime argument can be used to edit how often the program checks for opportunities; although we suspect checking every day will be more than sufficient, considering bets aren't updated frequently.
 
 
 ## Overview
