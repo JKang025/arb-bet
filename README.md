@@ -8,7 +8,11 @@ There are a few packages that this program requires, outlined in the provided re
 pip3 install requirements.txt
 ```
 
+
 To use the auto-email functionality, please enter the your login information in a file named credentials.json with the format given in example_credentials.json. 
+```
+{"sender_email":"YOUREMAIL@gmail.com", "app_password":"YOURAPPPASSWORD"}
+```
 
 ### Commands
 To use this program, simply run
