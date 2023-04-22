@@ -30,11 +30,11 @@ class scoreObj:
 
 # turns array of names and scores for a certain website into scoreObj objects
 def objectify(scores, names, website, counter):
-    s = set()
+    l = []
     for i in range(len(scores)):
-        obj = scoreObj(scores[i], names[i], website, i + counter + 1)
-        s.add(obj)
-    return s
+        obj = scoreObj(scores[i], names[i], website, i + counter)
+        l.append(obj)
+    return l
 
 
 # creates a map of unique names to set of objects that has the unique names
