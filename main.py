@@ -16,7 +16,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--gui", action="store_true", help="include flag to activate the GUI")
     parser.add_argument("--email", action="store_true", help="include flag to send a email")
-    parser.add_argument("--refreshtime", default="day", help="choose between hour, day, and week")
+    parser.add_argument("--refreshtime", default="day", help="choose between 10 minutes, hour, day, and week")
 
     args = parser.parse_args()
     script(args.gui, args.email)
@@ -28,7 +28,7 @@ def main():
     elif(args.refreshtime == "week"):
         schedule.every(1).week.do(script, args.gui, args.email) 
     elif(args.refreshtime == "minute"):
-        schedule.every(5).minute.do(script, args.gui, args.email) 
+        schedule.every(10).minute.do(script, args.gui, args.email) 
     else:
         print("please enter hour, day or month for refreshtime. To use the default (day), enter nothing")
         sys.exit(0)
