@@ -30,7 +30,7 @@ def main():
     elif(args.refreshtime == "minute"):
         schedule.every(5).minute.do(script, args.gui, args.email) 
     else:
-        print("pleas enter hour, day or month for refreshman. To use the default (day), enter nothing")
+        print("please enter hour, day or month for refreshtime. To use the default (day), enter nothing")
         sys.exit(0)
     while True:
         schedule.run_pending()

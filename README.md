@@ -1,7 +1,30 @@
 # Arb-Bet
-This project finds arbitrage opportunities for League of Legends professional ESports matches. It takes and compares scores from four different betting websites: Pinnacle Sports, Luckbox, Vulkan Bet, and GGBet. Upon finding an opportunity, it notifies the user of the match and the calculated arb opportunity.
+This project finds arbitrage opportunities for League of Legends professional e-Sports matches. It takes and compares scores from four different betting websites: Pinnacle Sports, Luckbox, Vulkan Bet, and GGBet. Upon finding an opportunity, it notifies the user of the match and the calculated arb opportunity.
 
 ## Usage
+### Setup
+There are a few packages that this program requires, outlined in the provided requirements.txt.
+```
+pip3 install requirements.txt
+```
+
+To use the auto-email functionality, please enter the your login information in a file named credentials.json with the format given in example_credentials.json. 
+
+### Commands
+To use this program, simply run
+```
+python3 main.py
+```
+There are certain arguments that can be run with the program
+```
+--gui
+--email
+--refreshtime day/hour/week/minute
+```
+
+### Usecase
+By default, the information - such as an arbitrage oppertunities - is outputed onto the console. However, if the program is run with the --gui flag, it will open a GUI that displays the relevant information. Furthermore, with the --email flag, the program will send an email containing arbitrage opperunities. The --refreshtime argument can be used to edit how often the program checks for opperunities; although we suspect checking every day will be more than sufficient, considering bets aren't updated frequently.
+
 
 ## Overview
 ### Betting odds
@@ -34,6 +57,6 @@ $$\text{key}:[\text{key},[\text{list}[0], \text{list}[1]]] \rightarrow \text{tea
 We first initialize this graph with Pinnacle by creating a graph and inputting nodes and edges. For each subsequent website scraper, we see if the graph contains the team. If not, the nodes and edges get initialized in the graph. If so, we see if there are better (higher) odds from the new website compared to the odds in the current graph. If that is true, we replace the odds and calculate if an arbitrage opportunity exists. If it exists, we notify the user.
 
 ### Other
-Obviously, there are other minor steps along the way. One challenge worth pointing out is the occasional existence of small differences in names for the same team between each website. For this, we tried to “normalize” names as much as possible: that means removing words like “Esports”, stripping strings and converting them to lowercase, etc.
+Obviously, there are other minor steps along the way. One challenge worth pointing out is the occasional existence of small differences in names for the same team between each website. For this, we tried to “normalize” names as much as possible: that means removing words like “Esports”, stripping strings and converting them to lowercase, etc. After this "normalization," names within a certain similarity threshold were considered the name.
 
 Another set of useful functions we employed are ones that output the graph, website HTMLs, and individual website matchup information to txt files.
