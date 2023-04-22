@@ -37,7 +37,3 @@ We first initialize this graph with Pinnacle by creating a graph and inputting n
 Obviously, there are other minor steps along the way. One challenge worth pointing out is the occasional existence of small differences in names for the same team between each website. For this, we tried to “normalize” names as much as possible: that means removing words like “Esports”, stripping strings and converting them to lowercase, etc.
 
 Another set of useful functions we employed are ones that output the graph, website HTMLs, and individual website matchup information to txt files.
-
-```bash
-test
-```
