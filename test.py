@@ -18,7 +18,7 @@ counter = 0
 fakename1 = ['jeffrey', 'brian']
 fakescore1 = [5.0, 0.2]
 fakename2 = ['jeffrey', 'brian']
-fakescore2 = [3.0, 0.1]
+fakescore2 = [0.1, 3.0]
 
 list_of_obj += objectify(fakescore1, fakename1, "Pinnacle", counter) + objectify(fakescore2, fakename2, "Luckbox", counter + 2)
 the_map = mapify(list_of_obj)
