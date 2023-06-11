@@ -5,3 +5,4 @@ venv
 __pycache__
 myenv
 credentials.json
+oldMain.py
