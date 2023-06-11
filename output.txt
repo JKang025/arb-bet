@@ -1,108 +1,21 @@
-Zero Tenacity, GGBet, 1.26	 - 	3.91, Pinnacle, Orbit Anonymo	 : 	1.05
-Orbit Anonymo, Pinnacle, 3.91	 - 	1.26, GGBet, Zero Tenacity	 : 	1.05
-LDLC OL, Pinnacle, 1.98	 - 	1.769, Pinnacle, GO	 : 	1.07
-GO, Pinnacle, 1.769	 - 	1.98, Pinnacle, LDLC OL	 : 	1.07
-Macko, Pinnacle, 1.602	 - 	2.24, Pinnacle, aNc Outplayed	 : 	1.07
-aNc Outplayed, Pinnacle, 2.24	 - 	1.602, Pinnacle, Macko	 : 	1.07
-WAP, Pinnacle, 2.49	 - 	1.45, Pinnacle, Pampas	 : 	1.09
-Pampas, Pinnacle, 1.45	 - 	2.49, Pinnacle, WAP	 : 	1.09
-Pampas, GGBet, 1.46	 - 	2.56, GGBet, WAP eSports	 : 	1.08
-Golden Guardians, Pinnacle, 3.13	 - 	1.44, GGBet, Evil Geniuses	 : 	1.01
-Evil Geniuses, GGBet, 1.44	 - 	3.13, Pinnacle, Golden Guardians	 : 	1.01
-T1, Pinnacle, 1.438	 - 	3.04, GGBet, Gen.G	 : 	1.02
-Gen.G, GGBet, 3.04	 - 	1.438, Pinnacle, T1	 : 	1.02
-Gen.G, Luckbox, 2.9	 - 	1.35, Luckbox, T1 Esports	 : 	1.09
-SoftBank HAWKS, Pinnacle, 1.043	 - 	10.3, Pinnacle, AXIZ	 : 	1.06
-AXIZ, Pinnacle, 10.3	 - 	1.043, Pinnacle, SoftBank HAWKS	 : 	1.06
-AXIZ, Luckbox, 7.5	 - 	1.05, Luckbox, SoftBank Hawks Gaming	 : 	1.09
-AXIZ, Vulkan, 9.72	 - 	1.04, Vulkan, Fukuoka SoftBank Hawks	 : 	1.06
-MGN Box, Pinnacle, 5.68	 - 	1.121, Pinnacle, SBTC	 : 	1.07
-SBTC, Pinnacle, 1.121	 - 	5.68, Pinnacle, MGN Box	 : 	1.07
-Frank, Pinnacle, 1.671	 - 	2.13, Pinnacle, Deep Cross	 : 	1.07
-Deep Cross, Pinnacle, 2.13	 - 	1.671, Pinnacle, Frank	 : 	1.07
-Bilibili, Pinnacle, 1.609	 - 	2.34, Pinnacle, Royal Never Give Up	 : 	1.05
-Royal Never Give Up, Pinnacle, 2.34	 - 	1.609, Pinnacle, Bilibili	 : 	1.05
-Royal Never Give Up, Luckbox, 2.2	 - 	1.76, GGBet, Bilibili Gaming	 : 	1.02
-Flash, Pinnacle, 2.5	 - 	1.492, Pinnacle, Saigon Buffalo	 : 	1.07
-Saigon Buffalo, Pinnacle, 1.492	 - 	2.5, Pinnacle, Flash	 : 	1.07
-Saigon Buffalo, Luckbox, 1.48	 - 	2.5, Luckbox, Team Flash	 : 	1.08
-Partizan, Pinnacle, 1.307	 - 	3.27, Pinnacle, Diamant	 : 	1.07
-Diamant, Pinnacle, 3.27	 - 	1.307, Pinnacle, Partizan	 : 	1.07
-GTZ, Pinnacle, 1.308	 - 	3.26, Pinnacle, White Dragons	 : 	1.07
-White Dragons, Pinnacle, 3.26	 - 	1.308, Pinnacle, GTZ	 : 	1.07
-White Dragons, Luckbox, 3.8	 - 	1.22, Luckbox, GTZ Esports	 : 	1.08
-RED Canids, GGBet, 1.92	 - 	1.961, Pinnacle, FURIA	 : 	1.03
-RED Canids, Luckbox, 1.72	 - 	2.0, Luckbox, FURIA Esports	 : 	1.08
-FURIA, Pinnacle, 1.961	 - 	1.92, GGBet, RED Canids	 : 	1.03
-Unicorns of Love SE, Pinnacle, 1.689	 - 	2.09, Pinnacle, SK Gaming Prime	 : 	1.07
-SK Gaming Prime, Pinnacle, 2.09	 - 	1.689, Pinnacle, Unicorns of Love SE	 : 	1.07
-SK Gaming Prime, Luckbox, 2.1	 - 	1.65, Luckbox, UOL Sexy Edition	 : 	1.08
-SK Gaming Prime, GGBet, 2.3	 - 	1.56, GGBet, Unicorns of Love Sexy Edition	 : 	1.08
-Heretics Academy, Pinnacle, 1.469	 - 	2.57, Pinnacle, Movistar Riders	 : 	1.07
-Movistar Riders, Pinnacle, 2.57	 - 	1.469, Pinnacle, Heretics Academy	 : 	1.07
-Movistar Riders, Luckbox, 2.5	 - 	1.48, Luckbox, Team Heretics Academy	 : 	1.08
-Movistar Riders, GGBet, 2.63	 - 	1.46, GGBet, Los Heretics	 : 	1.07
-FUT, Pinnacle, 2.13	 - 	1.662, Pinnacle, Istanbul Wildcats	 : 	1.07
-Istanbul Wildcats, Pinnacle, 1.662	 - 	2.13, Pinnacle, FUT	 : 	1.07
-Istanbul Wildcats, Luckbox, 1.72	 - 	2.0, Luckbox, FUT Esports	 : 	1.08
-Cloud9 Chall, Pinnacle, 1.571	 - 	2.31, Pinnacle, Liquid Chall	 : 	1.07
-Liquid Chall, Pinnacle, 2.31	 - 	1.571, Pinnacle, Cloud9 Chall	 : 	1.07
-KT Rolster, Pinnacle, 1.393	 - 	3.02, Pinnacle, Hanwha Life	 : 	1.05
-KT Rolster, GGBet, 1.4	 - 	2.9, Luckbox, Hanwha Life Esports	 : 	1.06
-Hanwha Life, Pinnacle, 3.02	 - 	1.393, Pinnacle, KT Rolster	 : 	1.05
-FENNEL, Vulkan, 1.5	 - 	2.7, Luckbox, Burning Core	 : 	1.04
-Burning Core, Luckbox, 2.7	 - 	1.5, Vulkan, FENNEL	 : 	1.04
-Whales, Pinnacle, 2.05	 - 	1.719, Pinnacle, CERBERUS	 : 	1.07
-CERBERUS, Pinnacle, 1.719	 - 	2.05, Pinnacle, Whales	 : 	1.07
-Oh My God, Pinnacle, 2.56	 - 	1.61, GGBet, Top Esports	 : 	1.01
-Top Esports, GGBet, 1.61	 - 	2.56, Pinnacle, Oh My God	 : 	1.01
-Secret, Pinnacle, 4.43	 - 	1.184, Pinnacle, GAM	 : 	1.07
-GAM, Pinnacle, 1.184	 - 	4.43, Pinnacle, Secret	 : 	1.07
-paiN, Pinnacle, 1.847	 - 	1.892, Pinnacle, LOUD	 : 	1.07
-LOUD, Pinnacle, 1.892	 - 	1.847, Pinnacle, paiN	 : 	1.07
-LOUD, GGBet, 1.82	 - 	2.0, Luckbox, paiN Gaming	 : 	1.05
-DRX Chall, Pinnacle, 1.775	 - 	1.97, Pinnacle, KT Rolster Chall	 : 	1.07
-KT Rolster Chall, Pinnacle, 1.97	 - 	1.775, Pinnacle, DRX Chall	 : 	1.07
-FURIA Academy, Pinnacle, 1.54	 - 	2.38, Pinnacle, INTZ Academy	 : 	1.07
-INTZ Academy, Pinnacle, 2.38	 - 	1.54, Pinnacle, FURIA Academy	 : 	1.07
-T1 Chall, Pinnacle, 1.934	 - 	1.813, Pinnacle, Dplus KIA Chall	 : 	1.07
-Dplus KIA Chall, Pinnacle, 1.813	 - 	1.934, Pinnacle, T1 Chall	 : 	1.07
-Vivo Keyd Stars Academy, Pinnacle, 1.406	 - 	2.78, Pinnacle, Los Grandes Academy	 : 	1.07
-Los Grandes Academy, Pinnacle, 2.78	 - 	1.406, Pinnacle, Vivo Keyd Stars Academy	 : 	1.07
-Movistar R7, Pinnacle, 2.6	 - 	1.458, Pinnacle, Estral	 : 	1.07
-Estral, Pinnacle, 1.458	 - 	2.6, Pinnacle, Movistar R7	 : 	1.07
-MAD Lions, Pinnacle, 2.8	 - 	1.401, Pinnacle, Vitality	 : 	1.07
-MAD Lions, Luckbox, 3.5	 - 	1.25, Luckbox, Team Vitality	 : 	1.09
-Vitality, Pinnacle, 1.401	 - 	2.8, Pinnacle, MAD Lions	 : 	1.07
-Astralis, Luckbox, 1.8	 - 	2.01, Pinnacle, Fnatic	 : 	1.05
-Fnatic, Pinnacle, 2.01	 - 	1.8, Luckbox, Astralis	 : 	1.05
-BDS, Pinnacle, 1.571	 - 	2.31, Pinnacle, SK Gaming	 : 	1.07
-SK Gaming, Pinnacle, 2.31	 - 	1.571, Pinnacle, BDS	 : 	1.07
-SK Gaming, Luckbox, 2.35	 - 	1.52, Luckbox, Team BDS	 : 	1.08
-G2, Pinnacle, 1.25	 - 	3.69, Pinnacle, KOI	 : 	1.07
-KOI, Pinnacle, 3.69	 - 	1.25, Pinnacle, G2	 : 	1.07
-KOI, Luckbox, 3.5	 - 	1.25, Luckbox, G2 Esports	 : 	1.09
-Bliss, Pinnacle, 1.74	 - 	1.934, Pinnacle, Chiefs	 : 	1.09
-Chiefs, Pinnacle, 1.934	 - 	1.74, Pinnacle, Bliss	 : 	1.09
-Deep Cross Gaming, Luckbox, 2.35	 - 	1.58, GGBet, Frank Esports	 : 	1.06
-Frank Esports, GGBet, 1.58	 - 	2.35, Luckbox, Deep Cross Gaming	 : 	1.06
-MGN Box Esports, Luckbox, 5.8	 - 	1.1, Luckbox, SBTC Esports	 : 	1.08
-SBTC Esports, Luckbox, 1.1	 - 	5.8, Luckbox, MGN Box Esports	 : 	1.08
-Team Flash, Vulkan, 2.65	 - 	1.43, Vulkan, Saigon Buffalo Esports	 : 	1.08
-Partizan Esports, GGBet, 1.44	 - 	2.8, Luckbox, Diamant Esports	 : 	1.05
-Diamant Esports, Luckbox, 2.8	 - 	1.44, GGBet, Partizan Esports	 : 	1.05
-FUT Esports, GGBet, 1.96	 - 	1.79, GGBet, Istanbul Wild Cats	 : 	1.07
-Team Secret, Vulkan, 4.85	 - 	1.15, Luckbox, GAM Esports	 : 	1.08
-GAM Esports, Luckbox, 1.15	 - 	4.85, Vulkan, Team Secret	 : 	1.08
-DRX Challengers, Luckbox, 1.62	 - 	2.15, Luckbox, KT Rolster Challengers	 : 	1.08
-KT Rolster Challengers, Luckbox, 2.15	 - 	1.62, Luckbox, DRX Challengers	 : 	1.08
-T1 Challengers, Luckbox, 2.0	 - 	1.72, Luckbox, Dplus KIA Challengers	 : 	1.08
-Dplus KIA Challengers, Luckbox, 1.72	 - 	2.0, Luckbox, T1 Challengers	 : 	1.08
-Rainbow7, Luckbox, 2.8	 - 	1.38, Luckbox, Estral Esports	 : 	1.08
-Estral Esports, Luckbox, 1.38	 - 	2.8, Luckbox, Rainbow7	 : 	1.08
-Team Whales, Vulkan, 2.11	 - 	1.66, Vulkan, Cerberus eSports	 : 	1.08
-Cerberus eSports, Vulkan, 1.66	 - 	2.11, Vulkan, Team Whales	 : 	1.08
-Lille Esport, GGBet, 1.42	 - 	2.69, GGBet, beGenius Electronic Sport Club	 : 	1.08
-beGenius Electronic Sport Club, GGBet, 2.69	 - 	1.42, GGBet, Lille Esport	 : 	1.08
-Cloud9 Challenger, GGBet, 1.57	 - 	2.28, GGBet, Team Liquid Challengers	 : 	1.08
-Team Liquid Challengers, GGBet, 2.28	 - 	1.57, GGBet, Cloud9 Challenger	 : 	1.08
+edward  youth, GGBet, 1.51	 - 	2.56, Pinnacle, lng	 : 	1.05
+lng, Pinnacle, 2.56	 - 	1.51, GGBet, edward  youth	 : 	1.05
+oh my dream, Pinnacle, 1.432	 - 	2.75, GGBet, lgd young	 : 	1.06
+lgd young, GGBet, 2.75	 - 	1.432, Pinnacle, oh my dream	 : 	1.06
+invictus young, GGBet, 1.19	 - 	4.49, GGBet, anyones legend young	 : 	1.06
+anyones legend young, GGBet, 4.49	 - 	1.19, GGBet, invictus young	 : 	1.06
+sbtc, Luckbox, 1.65	 - 	2.3, GGBet, cerberus	 : 	1.04
+cerberus, GGBet, 2.3	 - 	1.65, Luckbox, sbtc	 : 	1.04
+vitality, Pinnacle, 1.512	 - 	2.7, Luckbox, mad lions	 : 	1.03
+mad lions, Luckbox, 2.7	 - 	1.512, Pinnacle, vitality	 : 	1.03
+los grandes, GGBet, 2.18	 - 	1.653, Pinnacle, vivo keyd stars	 : 	1.06
+vivo keyd stars, Pinnacle, 1.653	 - 	2.18, GGBet, los grandes	 : 	1.06
+unicorns of love se, GGBet, 2.14	 - 	1.751, Pinnacle, los heretics	 : 	1.04
+los heretics, Pinnacle, 1.751	 - 	2.14, GGBet, unicorns of love se	 : 	1.04
+los heretics, Luckbox, 1.65	 - 	2.1, Luckbox, uol sexy edition	 : 	1.08
+sk prime, Luckbox, 2.7	 - 	1.495, Pinnacle, istanbul wildcats	 : 	1.04
+istanbul wildcats, Pinnacle, 1.495	 - 	2.7, Luckbox, sk prime	 : 	1.04
+bliss, Luckbox, 1.72	 - 	2.11, GGBet, chiefs	 : 	1.06
+chiefs, GGBet, 2.11	 - 	1.72, Luckbox, bliss	 : 	1.06
+lazy in life, GGBet, 1.57	 - 	2.28, GGBet, tackle	 : 	1.08
+tackle, GGBet, 2.28	 - 	1.57, GGBet, lazy in life	 : 	1.08

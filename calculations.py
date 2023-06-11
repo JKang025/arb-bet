@@ -10,6 +10,7 @@ class Node:
 class Graph:
     def __init__(self):
         self.graph = {}
+        self.list_of_arb_opp = []
     # Inserts nodes into graph
 
     def initialize_node(self, team):
@@ -48,13 +49,13 @@ class Graph:
                         printed_teams.append(neighbor)
 
 
-    def update_graph(self, website, team_names, scores):
+    def update_graph(self, score_objs):
 
         arb_opportunities = "" #final string of working arb opportunities. If there are none, return empty string
 
-        for i in range(0, len(team_names), 2):
-            team_1 = team_names[i]
-            team_2 = team_names[i+1]
+        for i in range(0, len(score_objs), 2):
+            team_1 = score_objs[i].name
+            team_2 = score_objs[i+1].name
 
              # if either team is not in graph yet, initialize
             if self.initialize_node(team_1) or self.initialize_node(team_2):
@@ -64,8 +65,8 @@ class Graph:
             # if both teams are in graphs but don't have matchup against each other
             # note that we only have to check one edge, since either both edges exist or neither
             if team_2 not in self.graph[team_1]:
-                self.graph[team_1][team_2] = [website, scores[i]]
-                self.graph[team_2][team_1] = [website, scores[i+1]]
+                self.graph[team_1][team_2] = [score_objs[i].website, score_objs[i].score]
+                self.graph[team_2][team_1] = [score_objs[i].website, score_objs[i+1].score]
                 # print("Inputting scores for: ",team_1, ", ", team_2)
 
             # else: both teams are already in graph
@@ -73,21 +74,24 @@ class Graph:
                 old_score_1 = self.graph[team_1][team_2][1]
                 old_score_2 = self.graph[team_2][team_1][1]
                 
-                if scores[i] > old_score_1: #if current odds (scores[i]) < past odds (score_1), replace it
-                    self.graph[team_1][team_2][1] = scores[i]
-                    self.graph[team_1][team_2][0] = website
+                if score_objs[i].score > old_score_1: #if current odds (scores[i]) < past odds (score_1), replace it
+                    self.graph[team_1][team_2][1] = score_objs[i].score
+                    self.graph[team_1][team_2][0] = score_objs[i].website
                     print("Found lower score")
+                    old_score_1 = score_objs[i].score
 
-                if scores[i+1] > old_score_2: #if prev odds > current odds, replace it
-                    self.graph[team_2][team_1][1] = scores[i+1]
-                    self.graph[team_2][team_1][0] = website
+                if score_objs[i+1].score > old_score_2: #if prev odds > current odds, replace it
+                    self.graph[team_2][team_1][1] = score_objs[i+1].score
+                    self.graph[team_2][team_1][0] = score_objs[i+1].website
                     print("Found lower score")
+                    old_score_2 = score_objs[i + 1].score
 
                 # Arb opportunity!
                 arb = 1/old_score_1 + 1/old_score_2
                 if arb < 1:
                     print("WORKS")
                     arb_opportunities = team_1 + ", " + str(old_score_1) + " : " + team_2 + ", ", str(old_score_2), " : " + str(arb) + '\n'
+                    self.list_of_arb_opp.append(arb_opportunities)
                     print(arb_opportunities)
                 
                 # print(self.graph[team_1].team, ", " , old_score_1, " : ", self.graph[team_2].team, ", ", old_score_2,", ",arb)
