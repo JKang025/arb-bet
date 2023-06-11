@@ -9,7 +9,7 @@ pip3 install requirements.txt
 ```
 
 
-To use the auto-email functionality, please enter the your login information in a file named credentials.json with the format given in example_credentials.json. 
+To use the auto-email functionality, please enter the your login information by creating a file named credentials.json with the format given in example_credentials.json. 
 ```
 {"sender_email":"YOUREMAIL@gmail.com", "app_password":"YOURAPPPASSWORD"}
 ```
@@ -28,6 +28,8 @@ There are certain arguments that can be run with the program
 
 ### Usecase
 By default, the information - such as an arbitrage opportunities - is outputed onto the console. However, if the program is run with the --gui flag, it will open a GUI that displays the relevant information. Furthermore, with the --email flag, the program will send an email containing arbitrage opportunities. The --refreshtime argument can be used to edit how often the program checks for opportunities; although we suspect checking every day will be more than sufficient, considering bets aren't updated frequently.
+
+If you choose to use the email functionality, please enter your own email in utils.py line 114, and enter the email you wish to be notfied with.
 
 
 ## Overview

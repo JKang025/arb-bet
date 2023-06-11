@@ -111,7 +111,7 @@ def sendMail(email_message):
     APP_PASSWORD = data['app_password']
 
     SENDER_EMAIL = data['sender_email']
-    RECIEVER_EMAIL = "knightdips@gmail.com"
+    RECIEVER_EMAIL = "YOUR_EMAIL@gmail.com"
     
     # creating message object
     msg = EmailMessage()
