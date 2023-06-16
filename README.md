@@ -5,7 +5,7 @@ This project finds arbitrage opportunities for League of Legends professional e-
 ### Setup
 There are a few packages that this program requires, outlined in the provided requirements.txt.
 ```
-pip3 install requirements.txt
+pip3 install -r requirements.txt
 ```
 
 
