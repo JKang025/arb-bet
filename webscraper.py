@@ -67,8 +67,8 @@ def pinnacle():
         pass
 
     # Verify output
-    verify_matchups("pinnacle_matchups", team_names, scores)
-    verify_HTML("pinnacle_HTML", driver.page_source)
+    verify_matchups("text_output/pinnacle_matchups", team_names, scores)
+    verify_HTML("html_files/pinnacle_HTML", driver.page_source)
 
     print("Scores: ", scores)
 
@@ -153,8 +153,8 @@ def luckbox():
         pass
 
     # verify output
-    verify_matchups("luckbox_matchups", luckbox_names, luckbox_scores)
-    verify_HTML("luckbox_HTML", driver.page_source)
+    verify_matchups("text_output/luckbox_matchups", luckbox_names, luckbox_scores)
+    verify_HTML("html_files/luckbox_HTML", driver.page_source)
 
     return "Luckbox", luckbox_names, luckbox_scores
 
@@ -189,8 +189,8 @@ def vulkan():
     except:
         pass
 
-    verify_matchups("vulkan_matchups", vulkan_names, vulkan_scores)
-    verify_HTML("vulkan_HTML", driver.page_source)
+    verify_matchups("text_output/vulkan_matchups", vulkan_names, vulkan_scores)
+    verify_HTML("html_files/vulkan_HTML", driver.page_source)
 
     return "Vulkan", vulkan_names, vulkan_scores
 
@@ -243,8 +243,8 @@ def ggbet():
     print(len(ggbet_scores))
     print(ggbet_scores)
     
-    verify_matchups("ggbet_matchups", ggbet_names, ggbet_scores)
-    verify_HTML("ggbet_HTML", driver.page_source)
+    verify_matchups("text_output/ggbet_matchups", ggbet_names, ggbet_scores)
+    verify_HTML("html_files/ggbet_HTML", driver.page_source)
 
     return "GGBet", ggbet_names, ggbet_scores
 
