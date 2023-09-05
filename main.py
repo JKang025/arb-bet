@@ -79,7 +79,7 @@ def script(gui, email):
             else:
                 result = ""
                 for string in g.list_of_arb_opp:
-                     result = result + string + "\n"
+                     result = result + string
                 sendMail(result)         
     except Exception as e:
          print("someting went wrong")

@@ -1,28 +1,28 @@
-hanwha life, Vulkan, 1.04	 - 	12.48, Pinnacle, ctbc flying oyster	 : 	1.04
-hanwha life, Luckbox, 1.02	 - 	10.0, Luckbox, cfo	 : 	1.08
-ctbc flying oyster, Pinnacle, 12.48	 - 	1.04, Vulkan, hanwha life	 : 	1.04
-ctbc flying oyster, Pinnacle, 6.36	 - 	1.1, Pinnacle, psg talon	 : 	1.07
-drx, Pinnacle, 1.046	 - 	10.62, Pinnacle, psg	 : 	1.05
-drx, Luckbox, 1.8	 - 	1.9, Luckbox, miaojing	 : 	1.08
-psg, Pinnacle, 10.62	 - 	1.046, Pinnacle, drx	 : 	1.05
-fukuoka hawks, Pinnacle, 17.82	 - 	1.02, Vulkan, max	 : 	1.04
-max, Vulkan, 1.02	 - 	17.82, Pinnacle, fukuoka hawks	 : 	1.04
-mgn box, Vulkan, 6.14	 - 	1.143, Pinnacle, dplus	 : 	1.04
-dplus, Pinnacle, 1.143	 - 	6.14, Vulkan, mgn box	 : 	1.04
-funplus phoenix blaze, Vulkan, 1.1	 - 	7.32, Pinnacle, baby whales	 : 	1.05
-funplus phoenix blaze, Luckbox, 2.4	 - 	1.5, Luckbox, nongshim redforce	 : 	1.08
-baby whales, Pinnacle, 7.32	 - 	1.1, Vulkan, funplus phoenix blaze	 : 	1.05
-baby whales, Vulkan, 3.79	 - 	1.242, Pinnacle, gam	 : 	1.07
-taipei bravo, Vulkan, 7.93	 - 	1.05, Vulkan, nongshim 	 : 	1.08
-nongshim redforce, Pinnacle, 1.057	 - 	9.28, Pinnacle, taipei bravo	 : 	1.05
-miaojing, Vulkan, 1.02	 - 	21.14, Pinnacle, v3	 : 	1.03
-invictus young, Vulkan, 1.08	 - 	8.55, Pinnacle, secret	 : 	1.04
-secret, Pinnacle, 8.55	 - 	1.08, Vulkan, invictus young	 : 	1.04
-karmine corp, Pinnacle, 1.724	 - 	2.14, Pinnacle, movistar riders	 : 	1.05
-movistar riders, Pinnacle, 2.14	 - 	1.724, Pinnacle, karmine corp	 : 	1.05
-loud, Pinnacle, 1.281	 - 	3.73, Pinnacle, pain	 : 	1.05
-pain, Pinnacle, 3.73	 - 	1.281, Pinnacle, loud	 : 	1.05
-mad lions, Pinnacle, 2.03	 - 	1.85, Luckbox, fnatic	 : 	1.03
-fnatic, Luckbox, 1.85	 - 	2.03, Pinnacle, mad lions	 : 	1.03
-bds, Pinnacle, 2.14	 - 	1.72, GGBet, golden guardians	 : 	1.05
-golden guardians, GGBet, 1.72	 - 	2.14, Pinnacle, bds	 : 	1.05
+hanwha life, web1, 1.1	 - 	12.48, web1, ctbc flying oyster	 : 	0.99
+hanwha life, web2, 1.02	 - 	10.0, web2, cfo	 : 	1.08
+ctbc flying oyster, web1, 12.48	 - 	1.1, web1, hanwha life	 : 	0.99
+ctbc flying oyster, web1, 6.36	 - 	1.1, web1, psg talon	 : 	1.07
+drx, web1, 1.046	 - 	10.62, web1, psg	 : 	1.05
+drx, web2, 1.8	 - 	1.9, web2, miaojing	 : 	1.08
+psg, web1, 10.62	 - 	1.046, web1, drx	 : 	1.05
+fukuoka hawks, web1, 17.82	 - 	1.02, web3, max	 : 	1.04
+max, web3, 1.02	 - 	17.82, web1, fukuoka hawks	 : 	1.04
+mgn box, web3, 6.14	 - 	1.143, web1, dplus	 : 	1.04
+dplus, web1, 1.143	 - 	6.14, web3, mgn box	 : 	1.04
+funplus phoenix blaze, web3, 1.1	 - 	7.32, web1, baby whales	 : 	1.05
+funplus phoenix blaze, web2, 2.4	 - 	1.5, web2, nongshim redforce	 : 	1.08
+baby whales, web1, 7.32	 - 	1.1, web3, funplus phoenix blaze	 : 	1.05
+baby whales, web3, 3.79	 - 	1.242, web1, gam	 : 	1.07
+taipei bravo, web3, 7.93	 - 	1.05, web3, nongshim 	 : 	1.08
+nongshim redforce, web1, 1.057	 - 	9.28, web1, taipei bravo	 : 	1.05
+miaojing, web3, 1.02	 - 	21.14, web1, v3	 : 	1.03
+invictus young, web3, 1.08	 - 	8.55, web1, secret	 : 	1.04
+secret, web1, 8.55	 - 	1.08, web3, invictus young	 : 	1.04
+karmine corp, web1, 1.724	 - 	2.14, web1, movistar riders	 : 	1.05
+movistar riders, web1, 2.14	 - 	1.724, web1, karmine corp	 : 	1.05
+loud, web1, 1.281	 - 	3.73, web1, pain	 : 	1.05
+pain, web1, 3.73	 - 	1.281, web1, loud	 : 	1.05
+mad lions, web1, 2.03	 - 	1.85, web2, fnatic	 : 	1.03
+fnatic, web2, 1.85	 - 	2.03, web1, mad lions	 : 	1.03
+bds, web1, 2.14	 - 	1.72, web1, golden guardians	 : 	1.05
+golden guardians, web1, 1.72	 - 	2.14, web1, bds	 : 	1.05

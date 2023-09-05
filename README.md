@@ -3,7 +3,7 @@ This project finds arbitrage opportunities for League of Legends professional e-
 
 ## Usage
 ### Setup
-There are a few packages that this program requires, outlined in the provided requirements.txt.
+There are a few packages that this program requires, outlined in the provided requirements.txt. You also need chromdriver installed that is compatible with your google chrome version.
 ```
 pip3 install -r requirements.txt
 ```
