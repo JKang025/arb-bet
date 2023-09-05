@@ -77,22 +77,22 @@ class Graph:
                 if score_objs[i].score > old_score_1: #if current odds (scores[i]) < past odds (score_1), replace it
                     self.graph[team_1][team_2][1] = score_objs[i].score
                     self.graph[team_1][team_2][0] = score_objs[i].website
-                    print("Found lower score")
+                    #print("Found lower score")
                     old_score_1 = score_objs[i].score
 
                 if score_objs[i+1].score > old_score_2: #if prev odds > current odds, replace it
                     self.graph[team_2][team_1][1] = score_objs[i+1].score
                     self.graph[team_2][team_1][0] = score_objs[i+1].website
-                    print("Found lower score")
+                    #print("Found lower score")
                     old_score_2 = score_objs[i + 1].score
 
                 # Arb opportunity!
                 arb = 1/old_score_1 + 1/old_score_2
                 if arb < 1:
-                    print("WORKS")
+                    #print("WORKS")
                     arb_opportunities = team_1 + ", " + str(old_score_1) + " : " + team_2 + ", ", str(old_score_2), " : " + str(arb) + '\n'
                     self.list_of_arb_opp.append(arb_opportunities)
-                    print(arb_opportunities)
+                    #ftgprint(arb_opportunities)
                 
                 # print(self.graph[team_1].team, ", " , old_score_1, " : ", self.graph[team_2].team, ", ", old_score_2,", ",arb)
 

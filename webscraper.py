@@ -11,7 +11,8 @@ import time
 
 
 def setUp():
-    driver_path = '/path/to/chromedriver'
+    #driver_path = '/path/to/chromedriver'
+    driver_path = '/Users/jkang/chromedriver'
     options = Options()
     options.headless = False #headless mode so popup doesn't pop up
     driver = webdriver.Chrome(options=options, executable_path=driver_path)
@@ -49,14 +50,13 @@ def pinnacle():
     try:
         # Wait until website loads properly
         WebDriverWait(driver, 60).until(
-            EC.presence_of_element_located((By.XPATH, '//*[@class="style_price__3ZXqH style_drawPrice__1lAp7"]'))
+            EC.presence_of_element_located((By.XPATH, '//*[@class="style_price__dFV4h style_drawPrice__3fXzx"]'))
         )
-
+        
         # Get elements, output into txt file for validation
-        team_names_temp = driver.find_elements(By.XPATH, '//*[@class="style_teamName__24KNG style_teamName__3jTXF ellipsis style_drawTeamName__3xViy"]')
-        scores_temp = driver.find_elements(By.XPATH, '//*[@class="style_price__3ZXqH style_drawPrice__1lAp7"]')
-        print("Length bitch" , len(team_names_temp))
-
+        team_names_temp = driver.find_elements(By.XPATH, '//*[@class="style_teamName__1Re1z style_teamName__BtxhI ellipsis style_drawTeamName__n-Rys"]')
+        scores_temp = driver.find_elements(By.XPATH, '//*[@class="style_price__dFV4h style_drawPrice__3fXzx"]')
+        
         # Get rid of draw bets, which have same XPATH. Also save text from elements
         for i in (range(len(team_names_temp))):
             if team_names_temp[i].text != "Draw":
@@ -70,8 +70,8 @@ def pinnacle():
     verify_matchups("text_output/pinnacle_matchups", team_names, scores)
     verify_HTML("html_files/pinnacle_HTML", driver.page_source)
 
-    print("Scores: ", scores)
-
+    print(team_names)
+    print(scores)
     return "Pinnacle", team_names, scores
 
 
@@ -97,7 +97,7 @@ def auto_scroll(driver):
 # From Luckbox
 def luckbox():
     driver = setUp()
-    driver.get("https://luckbox.com/?games=league-of-legends")
+    driver.get("https://luckbox.com/matches?games=league-of-legends")
     luckbox_names = []
     luckbox_scores = []
 
@@ -142,8 +142,9 @@ def luckbox():
         luckbox_scores_temp = driver.find_elements(By.XPATH, '//*[@class="odds"]') #includes draw odds
 
         time.sleep(5)
-
-        for i in (range(len(luckbox_names_temp))):
+        print(len(luckbox_names_temp))
+        print("haha")
+        for i in range(len(luckbox_names_temp)):
             if not "draw" in luckbox_names_temp[i].text.lower().strip():
                 if luckbox_scores_temp[i].text != '':
                     luckbox_names.append(luckbox_names_temp[i].text)
@@ -155,6 +156,10 @@ def luckbox():
     # verify output
     verify_matchups("text_output/luckbox_matchups", luckbox_names, luckbox_scores)
     verify_HTML("html_files/luckbox_HTML", driver.page_source)
+
+    print(luckbox_names)
+    print(luckbox_scores)
+    
 
     return "Luckbox", luckbox_names, luckbox_scores
 
@@ -192,6 +197,9 @@ def vulkan():
     verify_matchups("text_output/vulkan_matchups", vulkan_names, vulkan_scores)
     verify_HTML("html_files/vulkan_HTML", driver.page_source)
 
+    print(vulkan_names)
+    print(vulkan_scores)
+
     return "Vulkan", vulkan_names, vulkan_scores
 
 ################################################
@@ -211,7 +219,6 @@ def ggbet():
         WebDriverWait(driver, 60).until(
             EC.presence_of_element_located((By.XPATH, '//*[@class="market__container___3VAIG"]'))
         )
-
         ggbet_temp = driver.find_elements(By.XPATH, '//*[@class="market__container___3VAIG"]')
         for element in ggbet_temp:
             header = element.find_element(By.XPATH, './/*[@class="__app-Market-name market__name___2HszL"]') # find element within parent
@@ -238,9 +245,7 @@ def ggbet():
         pass
     
 
-    print(len(ggbet_names))
     print(ggbet_names)
-    print(len(ggbet_scores))
     print(ggbet_scores)
     
     verify_matchups("text_output/ggbet_matchups", ggbet_names, ggbet_scores)

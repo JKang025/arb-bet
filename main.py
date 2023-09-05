@@ -38,13 +38,19 @@ def script(gui, email):
         # gets all relevant infomration
         list_of_obj = []
         counter = 0
-        scrapers = [pinnacle, luckbox, vulkan, ggbet]
+
+        scrapers = [pinnacle, luckbox, vulkan, ggbet] 
+        #scrapers = [luckbox]
+
+
         for scraper in scrapers: 
             website, names, scores = scraper()
+            
             names = nameStandardize(names)
             list_of_obj = list_of_obj + objectify(scores, names, website, counter)
             counter = counter + len(names)
-            print("\n\n\n\n-------------------\nNEW: ", website)
+            print("\n\n\n\n-------------------\n: ", website)
+            
 
         # parses through the information of matches, standarizes the names
         the_map = mapify(list_of_obj)
@@ -54,7 +60,9 @@ def script(gui, email):
         g = Graph()
         g.update_graph(final_list)
         g.output_graph("output.txt")
-        print(g.list_of_arb_opp)
+        #print(g.list_of_arb_opp)
+        for op in g.list_of_arb_opp:
+             print("Arbitrage Opperunity: " + op)
 
         if(gui):
              print("does GUI stuff")
@@ -67,8 +75,9 @@ def script(gui, email):
                 for string in g.list_of_arb_opp:
                      result = result + string
                 sendMail(result)         
-    except:
+    except Exception as e:
          print("someting went wrong")
+         print(e)
   
       
 if __name__ == '__main__':

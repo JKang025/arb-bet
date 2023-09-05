@@ -1,0 +1,29 @@
+psg, Pinnacle, 7.81	 - 	1.076, Pinnacle, drx	 : 	1.06
+drx, Pinnacle, 1.076	 - 	7.81, Pinnacle, psg	 : 	1.06
+drx, Vulkan, 1.18	 - 	6.1, Vulkan, psg talon	 : 	1.01
+ctbc flying oyster, Pinnacle, 8.16	 - 	1.2, Vulkan, hanwha life	 : 	0.96
+hanwha life, Vulkan, 1.2	 - 	8.16, Pinnacle, ctbc flying oyster	 : 	0.96
+hanwha life, Luckbox, 1.08	 - 	6.3, Luckbox, cfo	 : 	1.08
+secret, Pinnacle, 8.15	 - 	1.18, GGBet, invictus young	 : 	0.97
+invictus young, GGBet, 1.18	 - 	8.15, Pinnacle, secret	 : 	0.97
+dplus, GGBet, 1.33	 - 	4.69, Pinnacle, mgn box	 : 	0.97
+mgn box, Pinnacle, 4.69	 - 	1.33, GGBet, dplus	 : 	0.97
+karmine corp, GGBet, 1.85	 - 	2.08, Pinnacle, movistar riders	 : 	1.02
+movistar riders, Pinnacle, 2.08	 - 	1.85, GGBet, karmine corp	 : 	1.02
+gam, GGBet, 1.39	 - 	3.76, Pinnacle, whales	 : 	0.99
+whales, Pinnacle, 3.76	 - 	1.39, GGBet, gam	 : 	0.99
+whales, Vulkan, 6.1	 - 	1.18, GGBet, funplus phoenix blaze	 : 	1.01
+loud, GGBet, 1.37	 - 	3.78, Pinnacle, pain	 : 	0.99
+pain, Pinnacle, 3.78	 - 	1.37, GGBet, loud	 : 	0.99
+mad lions, Pinnacle, 1.97	 - 	1.847, Pinnacle, fnatic	 : 	1.05
+fnatic, Pinnacle, 1.847	 - 	1.97, Pinnacle, mad lions	 : 	1.05
+bds, GGBet, 2.2	 - 	1.699, Pinnacle, golden guardians	 : 	1.04
+golden guardians, Pinnacle, 1.699	 - 	2.2, GGBet, bds	 : 	1.04
+miaojing, GGBet, 1.09	 - 	10.0, Luckbox, v3 	 : 	1.02
+v3 , Luckbox, 10.0	 - 	1.09, GGBet, miaojing	 : 	1.02
+⁠max, GGBet, 1.13	 - 	7.81, GGBet, fukuoka softbank hawks	 : 	1.01
+fukuoka softbank hawks, GGBet, 7.81	 - 	1.13, GGBet, ⁠max	 : 	1.01
+victorians, GGBet, 2.06	 - 	1.71, GGBet, evil toads	 : 	1.07
+evil toads, GGBet, 1.71	 - 	2.06, GGBet, victorians	 : 	1.07
+taipei bravo, GGBet, 7.19	 - 	1.07, GGBet, nongshim 	 : 	1.07
+nongshim , GGBet, 1.07	 - 	7.19, GGBet, taipei bravo	 : 	1.07
