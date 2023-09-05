@@ -5,6 +5,7 @@ import argparse
 import schedule
 import time
 import sys
+import json
 
 
 def main():
@@ -41,10 +42,14 @@ def script(gui, email):
 
         scrapers = [pinnacle, luckbox, vulkan, ggbet] 
         #scrapers = [luckbox]
-
-
+        with open('setup.json', 'r') as fp:
+            data = json.load(fp)
+        if data["print_odds"] == "1":
+             to_print = True
+        else:
+             to_print = False
         for scraper in scrapers: 
-            website, names, scores = scraper()
+            website, names, scores = scraper(to_print)
             
             names = nameStandardize(names)
             list_of_obj = list_of_obj + objectify(scores, names, website, counter)
@@ -60,20 +65,21 @@ def script(gui, email):
         g = Graph()
         g.update_graph(final_list)
         g.output_graph("output.txt")
-        #print(g.list_of_arb_opp)
+
+        print("Arbitrage opportunities listed below:")
         for op in g.list_of_arb_opp:
-             print("Arbitrage Opperunity: " + op)
+             print(op)
 
         if(gui):
              print("does GUI stuff")
         
         if(email):
             if(len(g.list_of_arb_opp) == 0):
-                  sendMail("There are no current arbitrage opperunities")
+                  sendMail("There are no current arbitrage opportunities")
             else:
                 result = ""
                 for string in g.list_of_arb_opp:
-                     result = result + string
+                     result = result + string + "\n"
                 sendMail(result)         
     except Exception as e:
          print("someting went wrong")

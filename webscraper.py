@@ -8,13 +8,19 @@ from selenium.webdriver.support import expected_conditions as EC
 import os
 import random
 import time
-
+import json
 
 def setUp():
-    #driver_path = '/path/to/chromedriver'
-    driver_path = '/Users/jkang/chromedriver'
+
+    #setup webdriver and options with options in setup.json
+    with open('setup.json', 'r') as fp:
+        data = json.load(fp)
+    driver_path = data["chromedriver_location"]
     options = Options()
-    options.headless = False #headless mode so popup doesn't pop up
+    if data["headless"] == 1:
+        options.headless = True
+    else:
+        options.headless = False
     driver = webdriver.Chrome(options=options, executable_path=driver_path)
     os.chdir(os.path.dirname(__file__))
     print("Directory: ", os.getcwd)
@@ -41,7 +47,7 @@ def verify_HTML(file, HTML):
 
 ################################################
 # From Pinnacle
-def pinnacle():
+def pinnacle(to_print):
     driver = setUp()
     driver.get('https://www.pinnacle.com/en/esports-hub/league-of-legends/')
     team_names = []
@@ -69,9 +75,11 @@ def pinnacle():
     # Verify output
     verify_matchups("text_output/pinnacle_matchups", team_names, scores)
     verify_HTML("html_files/pinnacle_HTML", driver.page_source)
-
-    print(team_names)
-    print(scores)
+    
+    if to_print:
+        print(team_names)
+        print(scores)
+    
     return "Pinnacle", team_names, scores
 
 
@@ -95,7 +103,7 @@ def auto_scroll(driver):
 
 ################################################
 # From Luckbox
-def luckbox():
+def luckbox(to_print):
     driver = setUp()
     driver.get("https://luckbox.com/matches?games=league-of-legends")
     luckbox_names = []
@@ -142,8 +150,6 @@ def luckbox():
         luckbox_scores_temp = driver.find_elements(By.XPATH, '//*[@class="odds"]') #includes draw odds
 
         time.sleep(5)
-        print(len(luckbox_names_temp))
-        print("haha")
         for i in range(len(luckbox_names_temp)):
             if not "draw" in luckbox_names_temp[i].text.lower().strip():
                 if luckbox_scores_temp[i].text != '':
@@ -157,8 +163,9 @@ def luckbox():
     verify_matchups("text_output/luckbox_matchups", luckbox_names, luckbox_scores)
     verify_HTML("html_files/luckbox_HTML", driver.page_source)
 
-    print(luckbox_names)
-    print(luckbox_scores)
+    if to_print:
+        print(luckbox_names)
+        print(luckbox_scores)
     
 
     return "Luckbox", luckbox_names, luckbox_scores
@@ -166,7 +173,7 @@ def luckbox():
 
 ################################################
 # From Vulkan
-def vulkan():
+def vulkan(to_print):
     driver = setUp()
     driver.get('https://vulkan.bet/en/esports/league-of-legends')
     vulkan_names = []
@@ -197,8 +204,9 @@ def vulkan():
     verify_matchups("text_output/vulkan_matchups", vulkan_names, vulkan_scores)
     verify_HTML("html_files/vulkan_HTML", driver.page_source)
 
-    print(vulkan_names)
-    print(vulkan_scores)
+    if to_print:
+        print(vulkan_names)
+        print(vulkan_scores)
 
     return "Vulkan", vulkan_names, vulkan_scores
 
@@ -208,7 +216,7 @@ def get_more_links(number):
     link = "https://ggbet.com/en/?page=" + str(number) + "&sportIds[]=esports_league_of_legends"
 
 
-def ggbet():
+def ggbet(to_print):
     driver = setUp()
     driver.get('https://ggbet.com/en/live?sportIds%5B%5D=esports_league_of_legends')
     ggbet_names = []
@@ -244,9 +252,9 @@ def ggbet():
     except:
         pass
     
-
-    print(ggbet_names)
-    print(ggbet_scores)
+    if to_print:
+        print(ggbet_names)
+        print(ggbet_scores)
     
     verify_matchups("text_output/ggbet_matchups", ggbet_names, ggbet_scores)
     verify_HTML("html_files/ggbet_HTML", driver.page_source)

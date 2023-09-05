@@ -14,6 +14,12 @@ To use the auto-email functionality, please enter the your login information by 
 {"sender_email":"YOUREMAIL@gmail.com", "app_password":"YOURAPPPASSWORD"}
 ```
 
+Furthermore, please create your own setup.json with the following format. For the headless and print_odd1 options, input "1" if you wish to enable, and anything else if you wish to disable that option.
+```
+{"chromedriver_location":"/path_to_chromedriver", "headless":"1", "print_odds":"1"}
+```
+
+
 ### Commands
 To use this program, simply run
 ```
