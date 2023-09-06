@@ -6,6 +6,7 @@ import schedule
 import time
 import sys
 import json
+import traceback
 
 
 def main():
@@ -60,7 +61,6 @@ def script(gui, email):
         # parses through the information of matches, standarizes the names
         the_map = mapify(list_of_obj)
         final_list = nameProcessing(the_map)
-        
         # does arbitrage calculations and outputs it in both output.txt and console
         g = Graph()
         g.update_graph(final_list)
@@ -79,11 +79,13 @@ def script(gui, email):
             else:
                 result = ""
                 for string in g.list_of_arb_opp:
-                     result = result + string
+                     result = result + string + '\n'
                 sendMail(result)         
     except Exception as e:
          print("someting went wrong")
          print(e)
+         traceback.print_exc()
+
   
       
 if __name__ == '__main__':

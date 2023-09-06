@@ -1,28 +1,319 @@
-hanwha life, web1, 1.1	 - 	12.48, web1, ctbc flying oyster	 : 	0.99
-hanwha life, web2, 1.02	 - 	10.0, web2, cfo	 : 	1.08
-ctbc flying oyster, web1, 12.48	 - 	1.1, web1, hanwha life	 : 	0.99
-ctbc flying oyster, web1, 6.36	 - 	1.1, web1, psg talon	 : 	1.07
-drx, web1, 1.046	 - 	10.62, web1, psg	 : 	1.05
-drx, web2, 1.8	 - 	1.9, web2, miaojing	 : 	1.08
-psg, web1, 10.62	 - 	1.046, web1, drx	 : 	1.05
-fukuoka hawks, web1, 17.82	 - 	1.02, web3, max	 : 	1.04
-max, web3, 1.02	 - 	17.82, web1, fukuoka hawks	 : 	1.04
-mgn box, web3, 6.14	 - 	1.143, web1, dplus	 : 	1.04
-dplus, web1, 1.143	 - 	6.14, web3, mgn box	 : 	1.04
-funplus phoenix blaze, web3, 1.1	 - 	7.32, web1, baby whales	 : 	1.05
-funplus phoenix blaze, web2, 2.4	 - 	1.5, web2, nongshim redforce	 : 	1.08
-baby whales, web1, 7.32	 - 	1.1, web3, funplus phoenix blaze	 : 	1.05
-baby whales, web3, 3.79	 - 	1.242, web1, gam	 : 	1.07
-taipei bravo, web3, 7.93	 - 	1.05, web3, nongshim 	 : 	1.08
-nongshim redforce, web1, 1.057	 - 	9.28, web1, taipei bravo	 : 	1.05
-miaojing, web3, 1.02	 - 	21.14, web1, v3	 : 	1.03
-invictus young, web3, 1.08	 - 	8.55, web1, secret	 : 	1.04
-secret, web1, 8.55	 - 	1.08, web3, invictus young	 : 	1.04
-karmine corp, web1, 1.724	 - 	2.14, web1, movistar riders	 : 	1.05
-movistar riders, web1, 2.14	 - 	1.724, web1, karmine corp	 : 	1.05
-loud, web1, 1.281	 - 	3.73, web1, pain	 : 	1.05
-pain, web1, 3.73	 - 	1.281, web1, loud	 : 	1.05
-mad lions, web1, 2.03	 - 	1.85, web2, fnatic	 : 	1.03
-fnatic, web2, 1.85	 - 	2.03, web1, mad lions	 : 	1.03
-bds, web1, 2.14	 - 	1.72, web1, golden guardians	 : 	1.05
-golden guardians, web1, 1.72	 - 	2.14, web1, bds	 : 	1.05
+2023-09-06 01:41:43
+hanwha life  challengers - 1.1 - webCustom : ctbc flying oyster acad - 12.48 - web1 : 0.99
+hanwha life  challengers - 1.02 - web2 : cfo academy - 10.0 - web2 : 1.08
+ctbc flying oyster acad - 12.48 - web1 : hanwha life  challengers - 1.1 - webCustom : 0.99
+ctbc flying oyster - 6.36 - web1 : psg talon - 1.1 - web1 : 1.07
+drx chall - 1.046 - web1 : psg acad - 10.62 - web1 : 1.05
+drx challengers - 1.8 - web2 : miaojing - 1.9 - web2 : 1.08
+psg acad - 10.62 - web1 : drx chall - 1.046 - web1 : 1.05
+fukuoka hawks acad - 17.82 - web1 : ⁠max - 1.02 - web3 : 1.04
+⁠max - 1.02 - web3 : fukuoka hawks acad - 17.82 - web1 : 1.04
+mgn box - 6.14 - web3 : dplus chall - 1.143 - web1 : 1.04
+dplus chall - 1.143 - web1 : mgn box - 6.14 - web3 : 1.04
+funplus phoenix blaze - 1.1 - web3 : baby whales - 7.32 - web1 : 1.05
+funplus blaze - 2.4 - web2 : nongshim redforce academy - 1.5 - web2 : 1.08
+baby whales - 7.32 - web1 : funplus phoenix blaze - 1.1 - web3 : 1.05
+whales - 3.79 - web3 : gam - 1.242 - web1 : 1.07
+taipei bravo - 7.93 - web3 : nongshim  academy - 1.05 - web3 : 1.08
+nongshim redforce acad - 1.057 - web1 : taipei bravo - 9.28 - web1 : 1.05
+miaojing - 1.02 - web3 : v3 acad - 21.14 - web1 : 1.03
+invictus  young - 1.08 - web3 : secret academy - 8.55 - web1 : 1.04
+secret academy - 8.55 - web1 : invictus  young - 1.08 - web3 : 1.04
+karmine corp - 1.724 - web1 : movistar riders - 2.14 - web1 : 1.05
+movistar riders - 2.14 - web1 : karmine corp - 1.724 - web1 : 1.05
+loud - 1.281 - web1 : pain - 3.73 - web1 : 1.05
+pain - 3.73 - web1 : loud - 1.281 - web1 : 1.05
+mad lions - 2.03 - web1 : fnatic - 1.85 - web2 : 1.03
+fnatic - 1.85 - web2 : mad lions - 2.03 - web1 : 1.03
+bds - 2.14 - web1 : golden guardians - 1.72 - web1 : 1.05
+golden guardians - 1.72 - web1 : bds - 2.14 - web1 : 1.05
+-----------------------------------------------------------
+2023-09-06 01:41:48
+hanwha life  challengers - 1.1 - webCustom : ctbc flying oyster acad - 12.48 - web1 : 0.99
+hanwha life  challengers - 1.02 - web2 : cfo academy - 10.0 - web2 : 1.08
+ctbc flying oyster acad - 12.48 - web1 : hanwha life  challengers - 1.1 - webCustom : 0.99
+ctbc flying oyster - 6.36 - web1 : psg talon - 1.1 - web1 : 1.07
+drx chall - 1.046 - web1 : psg acad - 10.62 - web1 : 1.05
+drx challengers - 1.8 - web2 : miaojing - 1.9 - web2 : 1.08
+psg acad - 10.62 - web1 : drx chall - 1.046 - web1 : 1.05
+fukuoka hawks acad - 17.82 - web1 : ⁠max - 1.02 - web3 : 1.04
+⁠max - 1.02 - web3 : fukuoka hawks acad - 17.82 - web1 : 1.04
+mgn box - 6.14 - web3 : dplus chall - 1.143 - web1 : 1.04
+dplus chall - 1.143 - web1 : mgn box - 6.14 - web3 : 1.04
+funplus phoenix blaze - 1.1 - web3 : baby whales - 7.32 - web1 : 1.05
+funplus blaze - 2.4 - web2 : nongshim redforce academy - 1.5 - web2 : 1.08
+baby whales - 7.32 - web1 : funplus phoenix blaze - 1.1 - web3 : 1.05
+whales - 3.79 - web3 : gam - 1.242 - web1 : 1.07
+taipei bravo - 7.93 - web3 : nongshim  academy - 1.05 - web3 : 1.08
+nongshim redforce acad - 1.057 - web1 : taipei bravo - 9.28 - web1 : 1.05
+miaojing - 1.02 - web3 : v3 acad - 21.14 - web1 : 1.03
+invictus  young - 1.08 - web3 : secret academy - 8.55 - web1 : 1.04
+secret academy - 8.55 - web1 : invictus  young - 1.08 - web3 : 1.04
+karmine corp - 1.724 - web1 : movistar riders - 2.14 - web1 : 1.05
+movistar riders - 2.14 - web1 : karmine corp - 1.724 - web1 : 1.05
+loud - 1.281 - web1 : pain - 3.73 - web1 : 1.05
+pain - 3.73 - web1 : loud - 1.281 - web1 : 1.05
+mad lions - 2.03 - web1 : fnatic - 1.85 - web2 : 1.03
+fnatic - 1.85 - web2 : mad lions - 2.03 - web1 : 1.03
+bds - 2.14 - web1 : golden guardians - 1.72 - web1 : 1.05
+golden guardians - 1.72 - web1 : bds - 2.14 - web1 : 1.05
+-----------------------------------------------------------
+2023-09-06 01:43:47
+mgn box - 12.0 - Vulkan : dplus chall - 1.083 - Pinnacle : 1.01
+dplus chall - 1.083 - Pinnacle : mgn box - 12.0 - Vulkan : 1.01
+funplus phoenix blaze - 1.085 - Pinnacle : baby whales - 7.54 - Vulkan : 1.05
+funplus blaze - 2.6 - Luckbox : nongshim redforce academy - 1.45 - Luckbox : 1.07
+baby whales - 7.54 - Vulkan : funplus phoenix blaze - 1.085 - Pinnacle : 1.05
+whales - 3.79 - Vulkan : gam - 1.242 - Pinnacle : 1.07
+taipei bravo - 7.93 - Vulkan : nongshim  academy - 1.05 - Vulkan : 1.08
+nongshim redforce acad - 1.053 - Pinnacle : taipei bravo - 9.75 - Pinnacle : 1.05
+v3 acad - 21.14 - Pinnacle : miaojing - 1.02 - Vulkan : 1.03
+miaojing - 1.02 - Vulkan : v3 acad - 21.14 - Pinnacle : 1.03
+miaojing - 1.95 - Luckbox : drx challengers - 1.75 - Luckbox : 1.08
+invictus  young - 1.11 - Vulkan : secret academy - 7.31 - Pinnacle : 1.04
+secret academy - 7.31 - Pinnacle : invictus  young - 1.11 - Vulkan : 1.04
+karmine corp - 1.724 - Pinnacle : movistar riders - 2.14 - Pinnacle : 1.05
+movistar riders - 2.14 - Pinnacle : karmine corp - 1.724 - Pinnacle : 1.05
+psg talon - 1.1 - Pinnacle : ctbc flying oyster - 6.36 - Pinnacle : 1.07
+ctbc flying oyster - 6.36 - Pinnacle : psg talon - 1.1 - Pinnacle : 1.07
+loud - 1.287 - Pinnacle : pain - 3.69 - Pinnacle : 1.05
+pain - 3.69 - Pinnacle : loud - 1.287 - Pinnacle : 1.05
+mad lions - 2.0 - Pinnacle : fnatic - 1.85 - Luckbox : 1.04
+fnatic - 1.85 - Luckbox : mad lions - 2.0 - Pinnacle : 1.04
+bds - 2.06 - Pinnacle : golden guardians - 1.73 - Vulkan : 1.06
+golden guardians - 1.73 - Vulkan : bds - 2.06 - Pinnacle : 1.06
+-----------------------------------------------------------
+2023-09-06 01:47:55
+mgn box - 8.57 - Vulkan : dplus chall - 1.083 - Pinnacle : 1.04
+dplus chall - 1.083 - Pinnacle : mgn box - 8.57 - Vulkan : 1.04
+funplus phoenix blaze - 1.14 - GGBet : baby whales - 7.54 - Vulkan : 1.01
+baby whales - 7.54 - Vulkan : funplus phoenix blaze - 1.14 - GGBet : 1.01
+whales - 3.79 - Vulkan : gam - 1.36 - GGBet : 1.0
+taipei bravo - 9.75 - Pinnacle : nongshim redforce acad - 1.053 - Pinnacle : 1.05
+taipei bravo - 7.93 - Vulkan : nongshim  academy - 1.07 - GGBet : 1.06
+nongshim redforce acad - 1.053 - Pinnacle : taipei bravo - 9.75 - Pinnacle : 1.05
+v3 acad - 21.14 - Pinnacle : miaojing - 1.04 - GGBet : 1.01
+miaojing - 1.04 - GGBet : v3 acad - 21.14 - Pinnacle : 1.01
+invictus  young - 1.2 - GGBet : secret academy - 7.31 - Pinnacle : 0.97
+secret academy - 7.31 - Pinnacle : invictus  young - 1.2 - GGBet : 0.97
+karmine corp - 1.92 - GGBet : movistar riders - 2.14 - Pinnacle : 0.99
+movistar riders - 2.14 - Pinnacle : karmine corp - 1.92 - GGBet : 0.99
+psg talon - 1.18 - GGBet : ctbc flying oyster - 6.36 - Pinnacle : 1.0
+ctbc flying oyster - 6.36 - Pinnacle : psg talon - 1.18 - GGBet : 1.0
+loud - 1.39 - GGBet : pain - 3.69 - Pinnacle : 0.99
+pain - 3.69 - Pinnacle : loud - 1.39 - GGBet : 0.99
+mad lions - 2.16 - GGBet : fnatic - 1.84 - Vulkan : 1.01
+fnatic - 1.84 - Vulkan : mad lions - 2.16 - GGBet : 1.01
+bds - 2.3 - GGBet : golden guardians - 1.73 - Vulkan : 1.01
+golden guardians - 1.73 - Vulkan : bds - 2.3 - GGBet : 1.01
+akatsuki - 1.34 - GGBet : celestial knights - 3.06 - GGBet : 1.07
+celestial knights - 3.06 - GGBet : akatsuki - 1.34 - GGBet : 1.07
+-----------------------------------------------------------
+2023-09-06 01:50:28
+mgn box - 18.23 - Vulkan : dplus chall - 1.083 - Pinnacle : 0.98
+dplus chall - 1.083 - Pinnacle : mgn box - 18.23 - Vulkan : 0.98
+funplus phoenix blaze - 1.61 - Vulkan : baby whales - 7.3 - Pinnacle : 0.76
+funplus blaze - 2.6 - Luckbox : nongshim redforce academy - 1.45 - Luckbox : 1.07
+baby whales - 7.3 - Pinnacle : funplus phoenix blaze - 1.61 - Vulkan : 0.76
+whales - 3.76 - Pinnacle : gam - 2.42 - Vulkan : 0.68
+taipei bravo - 17.24 - Vulkan : nongshim  academy - 1.01 - Vulkan : 1.05
+nongshim redforce acad - 1.053 - Pinnacle : taipei bravo - 9.75 - Pinnacle : 1.05
+v3  academy - 21.33 - Vulkan : miaojing - 1.013 - Pinnacle : 1.03
+miaojing - 1.013 - Pinnacle : v3  academy - 21.33 - Vulkan : 1.03
+miaojing - 1.95 - Luckbox : drx challengers - 1.75 - Luckbox : 1.08
+invictus  young - 1.85 - Vulkan : secret academy - 7.31 - Pinnacle : 0.68
+secret academy - 7.31 - Pinnacle : invictus  young - 1.85 - Vulkan : 0.68
+karmine corp - 4.29 - Vulkan : movistar riders - 2.14 - Pinnacle : 0.7
+movistar riders - 2.14 - Pinnacle : karmine corp - 4.29 - Vulkan : 0.7
+psg talon - 1.77 - Vulkan : ctbc flying oyster - 6.36 - Pinnacle : 0.72
+ctbc flying oyster - 6.36 - Pinnacle : psg talon - 1.77 - Vulkan : 0.72
+loud - 2.55 - Vulkan : pain - 3.69 - Pinnacle : 0.66
+pain - 3.69 - Pinnacle : loud - 2.55 - Vulkan : 0.66
+mad lions - 5.01 - Vulkan : fnatic - 1.85 - Luckbox : 0.74
+fnatic - 1.85 - Luckbox : mad lions - 5.01 - Vulkan : 0.74
+bds - 5.42 - Vulkan : golden guardians - 1.714 - Pinnacle : 0.77
+golden guardians - 1.714 - Pinnacle : bds - 5.42 - Vulkan : 0.77
+akatsuki - 2.37 - GGBet : celestial knights - 1.54 - GGBet : 1.07
+celestial knights - 1.54 - GGBet : akatsuki - 2.37 - GGBet : 1.07
+-----------------------------------------------------------
+2023-09-06 14:37:16
+fukuoka hawks acad - 14.93 - Pinnacle : dplus kia challengers - 1.03 - Vulkan : 1.04
+fukuoka softbank hawks academy - 2.98 - Vulkan : mgn box - 1.36 - Vulkan : 1.07
+dplus kia challengers - 1.03 - Vulkan : fukuoka hawks acad - 14.93 - Pinnacle : 1.04
+dplus kia challengers - 3.22 - Vulkan : ⁠max - 1.32 - Vulkan : 1.07
+karmine corp - 2.26 - Vulkan : movistar riders - 2.11 - Pinnacle : 0.92
+movistar riders - 2.11 - Pinnacle : karmine corp - 2.26 - Vulkan : 0.92
+psg talon - 1.26 - Vulkan : ctbc flying oyster - 6.17 - Pinnacle : 0.96
+ctbc flying oyster - 6.17 - Pinnacle : psg talon - 1.26 - Vulkan : 0.96
+ctbc flying oyster academy - 2.57 - Vulkan : secret academy - 1.47 - Vulkan : 1.07
+ctbc flying oyster academy - 4.68 - Vulkan : invictus  young - 1.17 - Vulkan : 1.07
+gam - 1.51 - Vulkan : whales - 3.74 - Pinnacle : 0.93
+whales - 3.74 - Pinnacle : gam - 1.51 - Vulkan : 0.93
+loud - 1.56 - Vulkan : pain - 3.61 - Pinnacle : 0.92
+pain - 3.61 - Pinnacle : loud - 1.56 - Vulkan : 0.92
+mad lions - 2.68 - GGBet : fnatic - 1.88 - Luckbox : 0.91
+fnatic - 1.88 - Luckbox : mad lions - 2.68 - GGBet : 0.91
+bds - 2.76 - GGBet : golden guardians - 1.714 - Pinnacle : 0.95
+golden guardians - 1.714 - Pinnacle : bds - 2.76 - GGBet : 0.95
+invictus  young - 1.85 - Luckbox : hanwha life  challengers - 2.19 - Vulkan : 1.0
+drx challengers - 1.72 - Luckbox : miaojing - 2.0 - Luckbox : 1.08
+miaojing - 2.0 - Luckbox : drx challengers - 1.72 - Luckbox : 1.08
+nongshim redforce academy - 1.62 - Luckbox : funplus blaze - 2.15 - Luckbox : 1.08
+funplus blaze - 2.15 - Luckbox : nongshim redforce academy - 1.62 - Luckbox : 1.08
+-----------------------------------------------------------
+2023-09-06 14:43:32
+fukuoka hawks acad - 14.93 - Pinnacle : dplus kia challengers - 1.39 - Vulkan : 0.79
+fukuoka softbank hawks academy - 10.45 - Vulkan : mgn box - 1.03 - Vulkan : 1.07
+dplus kia challengers - 1.39 - Vulkan : fukuoka hawks acad - 14.93 - Pinnacle : 0.79
+dplus kia challengers - 1.27 - Vulkan : ⁠max - 3.53 - Vulkan : 1.07
+karmine corp - 1.746 - Pinnacle : movistar riders - 5.25 - Vulkan : 0.76
+movistar riders - 5.25 - Vulkan : karmine corp - 1.746 - Pinnacle : 0.76
+psg talon - 1.105 - Pinnacle : ctbc flying oyster - 13.51 - Vulkan : 0.98
+ctbc flying oyster - 13.51 - Vulkan : psg talon - 1.105 - Pinnacle : 0.98
+ctbc flying oyster academy - 1.18 - Vulkan : secret academy - 4.49 - Vulkan : 1.07
+ctbc flying oyster academy - 17.19 - Vulkan : invictus  young - 1.01 - Vulkan : 1.05
+gam - 1.244 - Pinnacle : whales - 9.03 - Vulkan : 0.91
+whales - 9.03 - Vulkan : gam - 1.244 - Pinnacle : 0.91
+loud - 1.296 - Pinnacle : pain - 8.61 - Vulkan : 0.89
+pain - 8.61 - Vulkan : loud - 1.296 - Pinnacle : 0.89
+mad lions - 1.97 - Pinnacle : fnatic - 4.29 - GGBet : 0.74
+fnatic - 4.29 - GGBet : mad lions - 1.97 - Pinnacle : 0.74
+bds - 2.06 - Pinnacle : golden guardians - 4.16 - GGBet : 0.73
+golden guardians - 4.16 - GGBet : bds - 2.06 - Pinnacle : 0.73
+invictus  young - 5.44 - Vulkan : hanwha life  challengers - 1.85 - Luckbox : 0.72
+drx challengers - 1.72 - Luckbox : miaojing - 2.0 - Luckbox : 1.08
+miaojing - 2.0 - Luckbox : drx challengers - 1.72 - Luckbox : 1.08
+nongshim redforce academy - 1.62 - Luckbox : funplus blaze - 2.15 - Luckbox : 1.08
+funplus blaze - 2.15 - Luckbox : nongshim redforce academy - 1.62 - Luckbox : 1.08
+-----------------------------------------------------------
+2023-09-06 14:48:11
+fukuoka hawks acad - 14.93 - Pinnacle : dplus kia challengers - 1.39 - Vulkan : 0.79
+fukuoka softbank hawks academy - 10.45 - Vulkan : mgn box - 1.03 - Vulkan : 1.07
+dplus kia challengers - 1.39 - Vulkan : fukuoka hawks acad - 14.93 - Pinnacle : 0.79
+dplus kia challengers - 1.27 - Vulkan : ⁠max - 3.53 - Vulkan : 1.07
+karmine corp - 1.746 - Pinnacle : movistar riders - 5.25 - Vulkan : 0.76
+movistar riders - 5.25 - Vulkan : karmine corp - 1.746 - Pinnacle : 0.76
+psg talon - 1.105 - Pinnacle : ctbc flying oyster - 12.66 - Vulkan : 0.98
+ctbc flying oyster - 12.66 - Vulkan : psg talon - 1.105 - Pinnacle : 0.98
+ctbc flying oyster academy - 1.18 - Vulkan : secret academy - 4.49 - Vulkan : 1.07
+ctbc flying oyster academy - 17.19 - Vulkan : invictus  young - 1.01 - Vulkan : 1.05
+gam - 1.244 - Pinnacle : whales - 9.03 - Vulkan : 0.91
+whales - 9.03 - Vulkan : gam - 1.244 - Pinnacle : 0.91
+loud - 1.296 - Pinnacle : pain - 8.61 - Vulkan : 0.89
+pain - 8.61 - Vulkan : loud - 1.296 - Pinnacle : 0.89
+mad lions - 1.97 - Pinnacle : fnatic - 4.29 - GGBet : 0.74
+fnatic - 4.29 - GGBet : mad lions - 1.97 - Pinnacle : 0.74
+bds - 2.06 - Pinnacle : golden guardians - 4.16 - GGBet : 0.73
+golden guardians - 4.16 - GGBet : bds - 2.06 - Pinnacle : 0.73
+invictus  young - 5.44 - Vulkan : hanwha life  challengers - 1.85 - Luckbox : 0.72
+drx challengers - 1.72 - Luckbox : miaojing - 2.0 - Luckbox : 1.08
+miaojing - 2.0 - Luckbox : drx challengers - 1.72 - Luckbox : 1.08
+nongshim redforce academy - 1.62 - Luckbox : funplus blaze - 2.15 - Luckbox : 1.08
+funplus blaze - 2.15 - Luckbox : nongshim redforce academy - 1.62 - Luckbox : 1.08
+-----------------------------------------------------------
+2023-09-06 14:53:00
+fukuoka hawks acad - 14.93 - Pinnacle : dplus kia challengers - 1.06 - Vulkan : 1.01
+fukuoka softbank hawks academy - 4.02 - Vulkan : mgn box - 1.22 - Vulkan : 1.07
+dplus kia challengers - 1.06 - Vulkan : fukuoka hawks acad - 14.93 - Pinnacle : 1.01
+dplus kia challengers - 2.44 - Vulkan : ⁠max - 1.52 - Vulkan : 1.07
+karmine corp - 1.8 - Vulkan : movistar riders - 2.11 - Pinnacle : 1.03
+movistar riders - 2.11 - Pinnacle : karmine corp - 1.8 - Vulkan : 1.03
+psg talon - 1.18 - Vulkan : ctbc flying oyster - 6.17 - Pinnacle : 1.01
+ctbc flying oyster - 6.17 - Pinnacle : psg talon - 1.18 - Vulkan : 1.01
+ctbc flying oyster academy - 2.0 - Vulkan : secret academy - 1.75 - Vulkan : 1.07
+ctbc flying oyster academy - 6.33 - Vulkan : invictus  young - 1.1 - Vulkan : 1.07
+gam - 1.31 - Vulkan : whales - 3.74 - Pinnacle : 1.03
+whales - 3.74 - Pinnacle : gam - 1.31 - Vulkan : 1.03
+loud - 1.34 - Vulkan : pain - 3.61 - Pinnacle : 1.02
+pain - 3.61 - Pinnacle : loud - 1.34 - Vulkan : 1.02
+mad lions - 2.08 - GGBet : fnatic - 1.847 - Pinnacle : 1.02
+fnatic - 1.847 - Pinnacle : mad lions - 2.08 - GGBet : 1.02
+bds - 2.13 - GGBet : golden guardians - 1.714 - Pinnacle : 1.05
+golden guardians - 1.714 - Pinnacle : bds - 2.13 - GGBet : 1.05
+secret academy - 6.13 - Vulkan : hanwha life  challengers - 1.1 - Vulkan : 1.07
+-----------------------------------------------------------
+2023-09-06 14:54:25
+hanwha life  challengers - 1.1 - webCustom : ctbc flying oyster acad - 12.48 - web1 : 0.99
+hanwha life  challengers - 1.02 - web2 : cfo academy - 10.0 - web2 : 1.08
+ctbc flying oyster acad - 12.48 - web1 : hanwha life  challengers - 1.1 - webCustom : 0.99
+ctbc flying oyster - 6.36 - web1 : psg talon - 1.1 - web1 : 1.07
+drx chall - 1.046 - web1 : psg acad - 10.62 - web1 : 1.05
+drx challengers - 1.8 - web2 : miaojing - 1.9 - web2 : 1.08
+psg acad - 10.62 - web1 : drx chall - 1.046 - web1 : 1.05
+fukuoka hawks acad - 17.82 - web1 : ⁠max - 1.02 - web3 : 1.04
+⁠max - 1.02 - web3 : fukuoka hawks acad - 17.82 - web1 : 1.04
+mgn box - 6.14 - web3 : dplus chall - 1.143 - web1 : 1.04
+dplus chall - 1.143 - web1 : mgn box - 6.14 - web3 : 1.04
+funplus phoenix blaze - 1.1 - web3 : baby whales - 7.32 - web1 : 1.05
+funplus blaze - 2.4 - web2 : nongshim redforce academy - 1.5 - web2 : 1.08
+baby whales - 7.32 - web1 : funplus phoenix blaze - 1.1 - web3 : 1.05
+whales - 3.79 - web3 : gam - 1.242 - web1 : 1.07
+taipei bravo - 7.93 - web3 : nongshim  academy - 1.05 - web3 : 1.08
+nongshim redforce acad - 1.057 - web1 : taipei bravo - 9.28 - web1 : 1.05
+miaojing - 1.02 - web3 : v3 acad - 21.14 - web1 : 1.03
+invictus  young - 1.08 - web3 : secret academy - 8.55 - web1 : 1.04
+secret academy - 8.55 - web1 : invictus  young - 1.08 - web3 : 1.04
+karmine corp - 1.724 - web1 : movistar riders - 2.14 - web1 : 1.05
+movistar riders - 2.14 - web1 : karmine corp - 1.724 - web1 : 1.05
+loud - 1.281 - web1 : pain - 3.73 - web1 : 1.05
+pain - 3.73 - web1 : loud - 1.281 - web1 : 1.05
+mad lions - 2.03 - web1 : fnatic - 1.85 - web2 : 1.03
+fnatic - 1.85 - web2 : mad lions - 2.03 - web1 : 1.03
+bds - 2.14 - web1 : golden guardians - 1.72 - web1 : 1.05
+golden guardians - 1.72 - web1 : bds - 2.14 - web1 : 1.05
+-----------------------------------------------------------
+2023-09-06 15:40:03
+fukuoka hawks acad - 12.51 - Pinnacle : dplus chall - 1.035 - Pinnacle : 1.05
+fukuoka softbank hawks academy - 4.84 - Vulkan : mgn box - 1.15 - Vulkan : 1.08
+dplus chall - 1.035 - Pinnacle : fukuoka hawks acad - 12.51 - Pinnacle : 1.05
+dplus kia challengers - 2.3 - Vulkan : ⁠max - 1.56 - Vulkan : 1.08
+karmine corp - 1.746 - Pinnacle : movistar riders - 2.11 - Pinnacle : 1.05
+movistar riders - 2.11 - Pinnacle : karmine corp - 1.746 - Pinnacle : 1.05
+psg talon - 1.12 - Vulkan : ctbc flying oyster - 6.17 - Pinnacle : 1.05
+ctbc flying oyster - 6.17 - Pinnacle : psg talon - 1.12 - Vulkan : 1.05
+ctbc flying oyster academy - 1.86 - Vulkan : secret academy - 1.82 - Vulkan : 1.09
+ctbc flying oyster academy - 8.74 - Vulkan : invictus  young - 1.04 - Vulkan : 1.08
+gam - 1.244 - Pinnacle : whales - 3.79 - Vulkan : 1.07
+whales - 3.79 - Vulkan : gam - 1.244 - Pinnacle : 1.07
+loud - 1.303 - Pinnacle : pain - 3.56 - Pinnacle : 1.05
+pain - 3.56 - Pinnacle : loud - 1.303 - Pinnacle : 1.05
+mad lions - 1.97 - Pinnacle : fnatic - 1.88 - Luckbox : 1.04
+fnatic - 1.88 - Luckbox : mad lions - 1.97 - Pinnacle : 1.04
+bds - 2.06 - Pinnacle : golden guardians - 1.74 - GGBet : 1.06
+golden guardians - 1.74 - GGBet : bds - 2.06 - Pinnacle : 1.06
+invictus  young - 2.14 - Vulkan : hanwha life  challengers - 1.85 - Luckbox : 1.01
+drx challengers - 1.72 - Luckbox : miaojing - 2.0 - Luckbox : 1.08
+miaojing - 2.0 - Luckbox : drx challengers - 1.72 - Luckbox : 1.08
+nongshim redforce academy - 1.62 - Luckbox : funplus blaze - 2.15 - Luckbox : 1.08
+funplus blaze - 2.15 - Luckbox : nongshim redforce academy - 1.62 - Luckbox : 1.08
+-----------------------------------------------------------
+2023-09-06 15:41:28
+hanwha life  challengers - 1.1 - webCustom : ctbc flying oyster acad - 12.48 - web1 : 0.99
+hanwha life  challengers - 1.02 - web2 : cfo academy - 10.0 - web2 : 1.08
+ctbc flying oyster acad - 12.48 - web1 : hanwha life  challengers - 1.1 - webCustom : 0.99
+ctbc flying oyster - 6.36 - web1 : psg talon - 1.1 - web1 : 1.07
+drx chall - 1.046 - web1 : psg acad - 10.62 - web1 : 1.05
+drx challengers - 1.8 - web2 : miaojing - 1.9 - web2 : 1.08
+psg acad - 10.62 - web1 : drx chall - 1.046 - web1 : 1.05
+fukuoka hawks acad - 17.82 - web1 : ⁠max - 1.02 - web3 : 1.04
+⁠max - 1.02 - web3 : fukuoka hawks acad - 17.82 - web1 : 1.04
+mgn box - 6.14 - web3 : dplus chall - 1.143 - web1 : 1.04
+dplus chall - 1.143 - web1 : mgn box - 6.14 - web3 : 1.04
+funplus phoenix blaze - 1.1 - web3 : baby whales - 7.32 - web1 : 1.05
+funplus blaze - 2.4 - web2 : nongshim redforce academy - 1.5 - web2 : 1.08
+baby whales - 7.32 - web1 : funplus phoenix blaze - 1.1 - web3 : 1.05
+whales - 3.79 - web3 : gam - 1.242 - web1 : 1.07
+taipei bravo - 7.93 - web3 : nongshim  academy - 1.05 - web3 : 1.08
+nongshim redforce acad - 1.057 - web1 : taipei bravo - 9.28 - web1 : 1.05
+miaojing - 1.02 - web3 : v3 acad - 21.14 - web1 : 1.03
+invictus  young - 1.08 - web3 : secret academy - 8.55 - web1 : 1.04
+secret academy - 8.55 - web1 : invictus  young - 1.08 - web3 : 1.04
+karmine corp - 1.724 - web1 : movistar riders - 2.14 - web1 : 1.05
+movistar riders - 2.14 - web1 : karmine corp - 1.724 - web1 : 1.05
+loud - 1.281 - web1 : pain - 3.73 - web1 : 1.05
+pain - 3.73 - web1 : loud - 1.281 - web1 : 1.05
+mad lions - 2.03 - web1 : fnatic - 1.85 - web2 : 1.03
+fnatic - 1.85 - web2 : mad lions - 2.03 - web1 : 1.03
+bds - 2.14 - web1 : golden guardians - 1.72 - web1 : 1.05
+golden guardians - 1.72 - web1 : bds - 2.14 - web1 : 1.05
+-----------------------------------------------------------

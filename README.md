@@ -29,7 +29,7 @@ There are certain arguments that can be run with the program
 ```
 --gui
 --email
---refreshtime day/hour/week/minute
+--refreshtime day/hour/week
 ```
 
 ### Usecase

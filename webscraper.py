@@ -17,7 +17,7 @@ def setUp():
         data = json.load(fp)
     driver_path = data["chromedriver_location"]
     options = Options()
-    if data["headless"] == 1:
+    if data["headless"] == '1':
         options.headless = True
     else:
         options.headless = False
@@ -73,9 +73,11 @@ def pinnacle(to_print):
         pass
 
     # Verify output
-    verify_matchups("text_output/pinnacle_matchups", team_names, scores)
+    #verify_matchups("text_output/pinnacle_matchups", team_names, scores)
     verify_HTML("html_files/pinnacle_HTML", driver.page_source)
-    
+
+    if len(team_names) != len(scores):
+        return "Pinnacle", [], []
     if to_print:
         print(team_names)
         print(scores)
@@ -160,9 +162,12 @@ def luckbox(to_print):
         pass
 
     # verify output
-    verify_matchups("text_output/luckbox_matchups", luckbox_names, luckbox_scores)
+    #verify_matchups("text_output/luckbox_matchups", luckbox_names, luckbox_scores)
     verify_HTML("html_files/luckbox_HTML", driver.page_source)
-
+    
+    if len(luckbox_names) != len(luckbox_scores):
+        return "Luckbox", [], []
+    
     if to_print:
         print(luckbox_names)
         print(luckbox_scores)
@@ -201,9 +206,11 @@ def vulkan(to_print):
     except:
         pass
 
-    verify_matchups("text_output/vulkan_matchups", vulkan_names, vulkan_scores)
+    #verify_matchups("text_output/vulkan_matchups", vulkan_names, vulkan_scores)
     verify_HTML("html_files/vulkan_HTML", driver.page_source)
 
+    if len(vulkan_names) != len(vulkan_scores):
+        return "Vulkan", [], []
     if to_print:
         print(vulkan_names)
         print(vulkan_scores)
@@ -255,10 +262,12 @@ def ggbet(to_print):
     if to_print:
         print(ggbet_names)
         print(ggbet_scores)
-    
-    verify_matchups("text_output/ggbet_matchups", ggbet_names, ggbet_scores)
+ 
+    #verify_matchups("text_output/ggbet_matchups", ggbet_names, ggbet_scores)
     verify_HTML("html_files/ggbet_HTML", driver.page_source)
-
+    if len(ggbet_names) != len(ggbet_scores):
+        return "GGBet", [], []
+    
     return "GGBet", ggbet_names, ggbet_scores
 
 

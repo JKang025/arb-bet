@@ -1,4 +1,4 @@
-
+import datetime
 
 # Team name and website information
 class Node:
@@ -33,21 +33,26 @@ class Graph:
 
     # Prints graph
     def output_graph(self, file):
+        now = datetime.datetime.now()
+        current_date_time = now.strftime('%Y-%m-%d %H:%M:%S')
         printed_teams = [] # list of printed teams so if they were visited again, the matchup doesn't get printed again
 
-        with open(file, "w") as f:
+        with open(file, "a") as f:
+            f.write(current_date_time + '\n')
             for element in self.graph:
                 for neighbor in self.graph[element]:
                     if neighbor not in printed_teams:
-                        f.write(element + ", " + self.graph[element][neighbor][0] + ", " + str(self.graph[element][neighbor][1]))
-                        f.write("\t - \t")
-                        f.write(str(self.graph[neighbor][element][1]) + ", " + self.graph[neighbor][element][0] + ", " + neighbor)
-                        f.write("\t : \t")
-                        f.write(str(round(1/self.graph[neighbor][element][1] + 1/self.graph[element][neighbor][1],2)))
-                        f.write("\n")
+                        f.write(str(self.graph[element][neighbor].og_name) + " - " 
+                                + str(self.graph[element][neighbor].score) + " - " 
+                                + str(self.graph[element][neighbor].website) + " : " 
+                                + str(self.graph[neighbor][element].og_name) + " - " 
+                                + str(self.graph[neighbor][element].score) + " - " 
+                                + str(self.graph[neighbor][element].website) + " : " 
+                                + str(round(1/self.graph[neighbor][element].score + 1/self.graph[element][neighbor].score,2))
+                                + '\n')
                         printed_teams.append(neighbor)
-
-
+            f.write('-----------------------------------------------------------\n')
+        
     def update_graph(self, score_objs):
 
         arb_opportunities = "" #final string of working arb opportunities. If there are none, return empty string
@@ -64,28 +69,26 @@ class Graph:
             # if both teams are in graphs but don't have matchup against each other
             # note that we only have to check one edge, since either both edges exist or neither
             if team_2 not in self.graph[team_1]:
-                self.graph[team_1][team_2] = [score_objs[i].website, score_objs[i].score]
-                self.graph[team_2][team_1] = [score_objs[i].website, score_objs[i+1].score]
+                self.graph[team_1][team_2] = score_objs[i]
+                self.graph[team_2][team_1] = score_objs[i+1]
 
             # else: both teams are already in graph
             else:
-                old_score_1 = self.graph[team_1][team_2][1]
-                old_score_2 = self.graph[team_2][team_1][1]
+                old_score_1 = self.graph[team_1][team_2]
+                old_score_2 = self.graph[team_2][team_1]
                 
-                if score_objs[i].score > old_score_1: #if current odds (scores[i]) < past odds (score_1), replace it
-                    self.graph[team_1][team_2][1] = score_objs[i].score
-                    self.graph[team_1][team_2][0] = score_objs[i].website
-                    old_score_1 = score_objs[i].score
+                if score_objs[i].score > old_score_1.score: #if current odds (scores[i]) < past odds (score_1), replace it
+                    self.graph[team_1][team_2] = score_objs[i]
+                    old_score_1 = score_objs[i]
 
-                if score_objs[i+1].score > old_score_2: #if prev odds > current odds, replace it
-                    self.graph[team_2][team_1][1] = score_objs[i+1].score
-                    self.graph[team_2][team_1][0] = score_objs[i+1].website
-                    old_score_2 = score_objs[i + 1].score
+                if score_objs[i+1].score > old_score_2.score: #if prev odds > current odds, replace it
+                    self.graph[team_2][team_1] = score_objs[i+1]
+                    old_score_2 = score_objs[i + 1]
 
                 # Arb opportunity!
-                arb = 1/old_score_1 + 1/old_score_2
+                arb = 1/old_score_1.score + 1/old_score_2.score
                 if arb < 1 and arb > 0.95:
-                    arb_opportunities = str(team_1) + ", " + str(old_score_1) + " : " + str(team_2) + ", ", str(old_score_2), " : " + str(arb)
+                    arb_opportunities = str(old_score_1.og_name) + " - " + str(old_score_1.score) + " - " + str(old_score_1.website) + " : " + str(old_score_2.og_name) + " - " + str(old_score_2.score) + " - " + str(old_score_2.website) + " : " + str(arb)
                     self.list_of_arb_opp.append(str(arb_opportunities))
                 
 
