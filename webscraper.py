@@ -1,273 +1,73 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
+import requests
+from dotenv import load_dotenv
+import base64
 import os
-import random
-import time
-import json
 
-def setUp():
+# loading in required keys
+load_dotenv()
+OPENAI_API_KEY = os.getenv("OPENAI_KEY")
 
-    #setup webdriver and options with options in setup.json
-    with open('setup.json', 'r') as fp:
-        data = json.load(fp)
-    driver_path = data["chromedriver_location"]
-    options = Options()
-    if data["headless"] == '1':
-        options.headless = True
+
+def query_openai_chat(message: str, model: str = 'gpt-4o-mini', temperature: float = 0.7):
+    url = "https://api.openai.com/v1/chat/completions"
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {OPENAI_API_KEY}"
+    }
+    data = {
+        "model": model,
+        "messages": [{"role": "user", "content": message}],
+        "temperature": temperature
+    }
+
+    response = requests.post(url, headers=headers, json=data)
+    if response.status_code == 200:
+        response_data = response.json()
+        return response_data['choices'][0]['message']['content']
     else:
-        options.headless = False
-    driver = webdriver.Chrome(options=options, executable_path=driver_path)
-    os.chdir(os.path.dirname(__file__))
-    print("Directory: ", os.getcwd)
-
-    # Get random proxy
-    with open('http_proxies.txt', 'r') as file:
-            proxies = file.readlines()
-            rand_proxy = random.choice(proxies)
-            print("Random proxy: ", rand_proxy)
-    options.add_argument(f'--proxy-server=(proxy)')
-    return driver
-
-# Verify team names, scores, and matchups
-def verify_matchups(file, team_names, scores):
-    with open(file, "w") as f:
-        for i in range(0,len(scores),2):
-            f.write(team_names[i] + ", " + str(scores[i]) + " : " + team_names[i+1] + ", " + str(scores[i+1]) + "\n")
-
-# Verify HTML that was parsed
-def verify_HTML(file, HTML):
-    with open(file, "w") as f:
-        f.write(HTML)
+        response.raise_for_status()
 
 
-################################################
-# From Pinnacle
-def pinnacle(to_print):
-    driver = setUp()
-    driver.get('https://www.pinnacle.com/en/esports-hub/league-of-legends/')
-    team_names = []
-    scores = []
-
-    try:
-        # Wait until website loads properly
-        WebDriverWait(driver, 60).until(
-            EC.presence_of_element_located((By.XPATH, '//*[@class="style_price__dFV4h style_drawPrice__3fXzx"]'))
-        )
-        
-        # Get elements, output into txt file for validation
-        team_names_temp = driver.find_elements(By.XPATH, '//*[@class="style_teamName__1Re1z style_teamName__BtxhI ellipsis style_drawTeamName__n-Rys"]')
-        scores_temp = driver.find_elements(By.XPATH, '//*[@class="style_price__dFV4h style_drawPrice__3fXzx"]')
-        
-        # Get rid of draw bets, which have same XPATH. Also save text from elements
-        for i in (range(len(team_names_temp))):
-            if team_names_temp[i].text != "Draw":
-                if(scores_temp[i].text != ''):
-                    team_names.append(team_names_temp[i].text)
-                    scores.append(float(scores_temp[i].text))
-    except:
-        pass
-
-    # Verify output
-    #verify_matchups("text_output/pinnacle_matchups", team_names, scores)
-    verify_HTML("html_files/pinnacle_HTML", driver.page_source)
-
-    if len(team_names) != len(scores):
-        return "Pinnacle", [], []
-    if to_print:
-        print(team_names)
-        print(scores)
-    
-    return "Pinnacle", team_names, scores
 
 
-# Helper – scroll to end of page with (in)finite loading
-def auto_scroll(driver):
-    import time
-    
-    pause_time = 3
-    height = driver.execute_script("return document.body.scrollHeight")
+def query_openai_image(message: str, image_path: str, model: str = 'gpt-4o-mini'):
+    with open(image_path, "rb") as image_file:
+        base64_image = base64.b64encode(image_file.read()).decode('utf-8')
 
-    while True:
-        driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
-        time.sleep(pause_time)
+    headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"Bearer {OPENAI_API_KEY}"
+    }
+    payload = {
+    "model": "gpt-4o-mini",
+    "messages": [
+        {
+        "role": "user",
+        "content": [
+            {
+            "type": "text",
+            "text": message
+            },
+            {
+            "type": "image_url",
+            "image_url": {
+                "url": f"data:image/jpeg;base64,{base64_image}"
+            }
+            }
+        ]
+        }
+    ],
+    "max_tokens": 300
+    }
 
-        # If curr height is same as prev, don't scroll anymore
-        new_height = driver.execute_script("return document.body.scrollHeight")
-        if new_height == height:
-            break
-        else: # else: keep scrolling
-            height = new_height
-
-################################################
-# From Luckbox
-def luckbox(to_print):
-    driver = setUp()
-    driver.get("https://luckbox.com/matches?games=league-of-legends")
-    luckbox_names = []
-    luckbox_scores = []
-
-    try:
-        # Configure cookies
-        WebDriverWait(driver, 60).until(
-            EC.presence_of_element_located((By.XPATH, '//button[@data-cookiefirst-action="adjust"]'))
-        )
-
-        cookie_button = driver.find_element(By.XPATH, '//button[@data-cookiefirst-action="adjust"]')
-        cookie_button.click()
-
-        WebDriverWait(driver, 60).until(
-            EC.presence_of_element_located((By.XPATH, '//button[@data-cookiefirst-action="save"]'))
-        )
-
-        save_button = driver.find_element(By.XPATH, '//button[@data-cookiefirst-action="save"]')
-        save_button.click()
-
-        # Wait until website loads properly
-        WebDriverWait(driver, 60).until(
-            EC.element_to_be_clickable((By.XPATH, '//*[@class="odds"]'))
-        )
-
-        # Scroll to button to reveal all matches
-        try:
-            match_button = driver.find_element(By.XPATH, '//button[@class="link-to-matches lb-btn btn-color-dark btn-size-medium btn-full-width btn-uppercased"]')
-            driver.execute_script("arguments[0].scrollIntoView(true);", match_button) # for some reason this line overshoots, so scroll back up in next two lines
-            time.sleep(3)
-            driver.execute_script("window.scrollBy(0,-400)", "")
-            time.sleep(3)
-            match_button.click()
-
-        #sometimes the match button isn't there, so else do nothing
-        except:
-            pass
-
-        # scroll to reveal all matches
-        auto_scroll(driver)
-
-        luckbox_names_temp = driver.find_elements(By.XPATH, '//*[@class="team-name" or @class="draw"]') #draw odds are included here so we can identify/remove them in list of scores
-        luckbox_scores_temp = driver.find_elements(By.XPATH, '//*[@class="odds"]') #includes draw odds
-
-        time.sleep(5)
-        for i in range(len(luckbox_names_temp)):
-            if not "draw" in luckbox_names_temp[i].text.lower().strip():
-                if luckbox_scores_temp[i].text != '':
-                    luckbox_names.append(luckbox_names_temp[i].text)
-                    luckbox_scores.append(float(luckbox_scores_temp[i].text))
-
-    except:
-        pass
-
-    # verify output
-    #verify_matchups("text_output/luckbox_matchups", luckbox_names, luckbox_scores)
-    verify_HTML("html_files/luckbox_HTML", driver.page_source)
-    
-    if len(luckbox_names) != len(luckbox_scores):
-        return "Luckbox", [], []
-    
-    if to_print:
-        print(luckbox_names)
-        print(luckbox_scores)
-    
-
-    return "Luckbox", luckbox_names, luckbox_scores
+    response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
+    if response.status_code == 200:
+        response_data = response.json()
+        return response_data['choices'][0]['message']['content']
+    else:
+        response.raise_for_status()
 
 
-################################################
-# From Vulkan
-def vulkan(to_print):
-    driver = setUp()
-    driver.get('https://vulkan.bet/en/esports/league-of-legends')
-    vulkan_names = []
-    vulkan_scores = []
-
-    # If elements are present, scrape. If not, move on
-    try:
-        WebDriverWait(driver, 60).until(
-            EC.presence_of_element_located((By.XPATH, '//*[@class="__app-MarketDefault-odds Market__odds___20I7f"]'))
-        )
-
-        vulkan_temp = driver.find_elements(By.XPATH, '//*[@class="__app-MarketDefault-odds Market__odds___20I7f"]')
-        
-        for element in vulkan_temp:
-            try: # some scores are hidden; if that's the case, don't append
-                buttons = element.find_elements(By.XPATH, './/*[@class="__app-OddButton-container oddButton__container___36P6_ oddButton__is-active___2st2r "]') # two buttons for each team
-                
-                for button in buttons:
-                    vulkan_names.append(button.get_attribute("title"))
-                    vulkan_scores.append(float(button.find_element(By.XPATH, './/*[@class="oddButton__coef___2tokv"]').text))
-
-            except:
-                continue
-
-    except:
-        pass
-
-    #verify_matchups("text_output/vulkan_matchups", vulkan_names, vulkan_scores)
-    verify_HTML("html_files/vulkan_HTML", driver.page_source)
-
-    if len(vulkan_names) != len(vulkan_scores):
-        return "Vulkan", [], []
-    if to_print:
-        print(vulkan_names)
-        print(vulkan_scores)
-
-    return "Vulkan", vulkan_names, vulkan_scores
-
-################################################
-# GGBet
-def get_more_links(number):
-    link = "https://ggbet.com/en/?page=" + str(number) + "&sportIds[]=esports_league_of_legends"
-
-
-def ggbet(to_print):
-    driver = setUp()
-    driver.get('https://ggbet.com/en/live?sportIds%5B%5D=esports_league_of_legends')
-    ggbet_names = []
-    ggbet_scores = []
-
-    try:
-        # Element contains two nested elements. Check the first to see if it's "winner", i.e. the bet we're looking for
-        WebDriverWait(driver, 60).until(
-            EC.presence_of_element_located((By.XPATH, '//*[@class="market__container___3VAIG"]'))
-        )
-        ggbet_temp = driver.find_elements(By.XPATH, '//*[@class="market__container___3VAIG"]')
-        for element in ggbet_temp:
-            header = element.find_element(By.XPATH, './/*[@class="__app-Market-name market__name___2HszL"]') # find element within parent
-
-            if header.text == "Winner": # if header is the correct one for odds (there are three headers)
-                try: # some scores are hidden; if that's the case, don't append
-                    names = element.find_elements(By.XPATH, './/*[@class="oddButton__title___eYYGG"]')
-                    scores = element.find_elements(By.XPATH, './/*[@class="oddButton__coef___2tokv"]')
-
-                    counter = 0
-                    for score in scores:
-                        if not score.text == "-": # if score is not null, append
-                            ggbet_scores.append(float(score.text))
-                            counter += 1
-
-                    if counter == 2:
-                        for name in names:
-                            ggbet_names.append(name.text)
-
-                except:
-                    continue
-
-    except:
-        pass
-    
-    if to_print:
-        print(ggbet_names)
-        print(ggbet_scores)
- 
-    #verify_matchups("text_output/ggbet_matchups", ggbet_names, ggbet_scores)
-    verify_HTML("html_files/ggbet_HTML", driver.page_source)
-    if len(ggbet_names) != len(ggbet_scores):
-        return "GGBet", [], []
-    
-    return "GGBet", ggbet_names, ggbet_scores
-
-
+if __name__=='__main__':
+    q = query_openai_image('please tell me what image I am looking at right now', 'testimg.png')
+    print(q)
