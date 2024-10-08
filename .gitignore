@@ -7,4 +7,5 @@ myenv
 credentials.json
 setup.json
 demo_working.py
-
+.env
+env
