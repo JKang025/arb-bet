@@ -1,3 +1,6 @@
+# Updated LOL-based Trading Project
+Please visit [here](https://github.com/JKang025/league-trading) for my new project that actually trades on the Kalshi markets based on ML models 
+
 # Arb-Bet
 This project finds arbitrage opportunities for League of Legends professional e-Sports matches. It takes and compares scores from four different betting websites: Pinnacle Sports, Luckbox, Vulkan Bet, and GGBet. Upon finding an opportunity, it notifies the user of the match and the calculated arb opportunity.
 
